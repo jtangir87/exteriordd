@@ -1,9 +1,3 @@
-/**
-* Template Name: Company - v2.1.0
-* Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 /*--------------------------------------------------------------
 # General
@@ -52,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .back-to-top:hover {
   color: #fff;
-  background: #2ae149;
+  background: #ff0000;
   transition: 0.3s ease-in-out;
 }
 
@@ -340,6 +334,11 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
 }
 
+.header-social-links .btn {
+  background-color: #e73f3f;
+  border-color: #e73f3f;
+}
+
 .header-social-links a:hover {
   color: #e73f3f;
 }
@@ -529,6 +528,11 @@ section {
   background-color: #f7f7f7;
 }
 
+.section-cta {
+  color: white;
+  background-color: #496bb3;
+}
+
 .section-title {
   text-align: center;
   padding-bottom: 30px;
@@ -618,7 +622,7 @@ section {
 --------------------------------------------------------------*/
 .services .icon-box {
   text-align: center;
-  padding: 70px 20px 80px 20px;
+  padding: 30px 20px 40px 20px;
   transition: all ease-in-out 0.3s;
   background: #fff;
 }
@@ -627,6 +631,17 @@ section {
   margin: 0 auto;
   width: 100px;
   height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease-in-out 0.3s;
+  position: relative;
+}
+
+.services .icon-box .icon-img {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -871,9 +886,9 @@ section {
 
 .clients .client-logo img {
   transition: all 0.3s ease-in-out;
-  height: 36px;
+  height: 801ed33cpx;
   -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+  filter: grayscale(25%);
 }
 
 .clients .client-logo:hover img {
@@ -1471,6 +1486,165 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Call To Action
+--------------------------------------------------------------*/
+.call-to-action .info-wrap {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.call-to-action .info {
+  background: #fff;
+}
+
+.call-to-action .info i {
+  font-size: 20px;
+  color: #e73f3f;
+  float: left;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #e73f3f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+
+.call-to-action .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #111;
+}
+
+.call-to-action .info p {
+  padding: 0 0 0 60px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #444444;
+}
+
+.call-to-action .info:hover i {
+  background: #e73f3f;
+  color: #fff;
+}
+
+.call-to-action .php-email-form {
+  width: 100%;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  padding: 30px;
+  background: #fff;
+}
+
+.call-to-action .php-email-form .form-group {
+  padding-bottom: 8px;
+}
+
+.call-to-action .php-email-form .validate {
+  display: none;
+  color: red;
+  margin: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.call-to-action .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.call-to-action .php-email-form .error-message br + br {
+  margin-top: 25px;
+}
+
+.call-to-action .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.call-to-action .php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.call-to-action .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+
+.call-to-action .php-email-form input, .call-to-action .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.call-to-action .php-email-form input:focus, .call-to-action .php-email-form textarea:focus {
+  border-color: #e73f3f;
+}
+
+.call-to-action .php-email-form input {
+  height: 44px;
+}
+
+.call-to-action .php-email-form textarea {
+  padding: 10px 12px;
+}
+
+.call-to-action .php-email-form button[type="submit"] {
+  background: #e73f3f;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.call-to-action .php-email-form button[type="submit"]:hover {
+  background: #2ae149;
+}
+
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
 .portfolio-details {
@@ -1643,7 +1817,7 @@ section {
 }
 
 .blog .entry .entry-content .read-more a:hover {
-  background: #1ed33c;
+  background: #e73f3f;
 }
 
 .blog .entry .entry-content h3 {
@@ -1894,7 +2068,7 @@ section {
 }
 
 .blog .blog-comments .reply-form .btn-primary:hover {
-  background-color: #1ed33c;
+  background-color: #e73f3f;
 }
 
 .blog .blog-pagination {
@@ -1994,7 +2168,7 @@ section {
 }
 
 .blog .sidebar .search-form form button:hover {
-  background: #1ed33c;
+  background: #e73f3f;
 }
 
 .blog .sidebar .categories ul {
@@ -2146,7 +2320,7 @@ section {
 
 #footer .footer-top .footer-links ul i {
   padding-right: 2px;
-  color: #1ed33c;
+  color: #e73f3f;
   font-size: 18px;
   line-height: 1;
 }
@@ -2218,7 +2392,7 @@ section {
 }
 
 #footer .footer-newsletter form input[type="submit"]:hover {
-  background: #2ae149;
+  background: #e70606;
 }
 
 #footer .credits {
