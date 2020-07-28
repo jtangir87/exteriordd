@@ -569,7 +569,7 @@ section {
   padding: 15px 0;
   background: #e73f3f;
   min-height: 40px;
-  margin-top: 72px;
+  margin-top: 90px;
 }
 
 .breadcrumbs h2 {
@@ -614,6 +614,37 @@ section {
   }
   .breadcrumbs ol li {
     display: inline-block;
+  }
+}
+
+/*--------------------------------------------------------------
+# Certs
+--------------------------------------------------------------*/
+.certs {
+  padding-top: 30px;
+  padding-bottom: 5px;
+}
+
+.certs img {
+  max-height: 100px;
+}
+.certs #ha-horiz {
+  margin-top: 45px;
+}
+
+@media (max-width:576px) {
+  .certs {
+    align-items: center;
+  }
+  .certs .col-sm-4 {
+    width: auto;
+  }
+  .certs img {
+    max-width: 75px!important;
+    max-height: 75px;
+  }
+  .certs #ha-horiz {
+    margin-top: 25px;
   }
 }
 
