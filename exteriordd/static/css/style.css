@@ -649,6 +649,15 @@ section {
   position: relative;
 }
 
+.services .icon-box .icon-img .img-round {
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  height: 200px
+}
+
+
 .services .icon-box .icon i {
   font-size: 36px;
   transition: 0.5s;
