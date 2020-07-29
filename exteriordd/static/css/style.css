@@ -377,11 +377,18 @@ h1, h2, h3, h4, h5, h6 {
   align-items: flex-end;
   justify-content: center;
   position: absolute;
-  bottom: 60px;
+  bottom: 260px;
   top: 70px;
   left: 55px;
   right: 55px;
 }
+
+@media (min-width: 576px) {
+  #hero .carousel-container {
+    bottom: 360px;
+  }
+}
+
 
 #hero .carousel-content {
   background: rgba(4, 4, 4, 0.7);
@@ -628,8 +635,8 @@ section {
 .certs img {
   max-height: 100px;
 }
-.certs #ha-horiz {
-  margin-top: 45px;
+.certs .cert-horiz {
+  margin-top: 20px;
 }
 
 @media (max-width:576px) {
@@ -642,9 +649,6 @@ section {
   .certs img {
     max-width: 75px!important;
     max-height: 75px;
-  }
-  .certs #ha-horiz {
-    margin-top: 25px;
   }
 }
 
@@ -680,14 +684,11 @@ section {
   position: relative;
 }
 
-.services .icon-box .icon-img .img-round {
-  border-radius: 50%;
-  position: relative;
-  overflow: hidden;
-  width: 200px;
-  height: 200px
-}
 
+.services .icon-box .icon-img .service-img {
+  width: 300px;
+  height: 200px;
+}
 
 .services .icon-box .icon i {
   font-size: 36px;
