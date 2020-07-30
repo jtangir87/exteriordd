@@ -18,10 +18,14 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
   <link href="{% static 'vendor/icofont/icofont.min.css' %}" rel="stylesheet">
   <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
-  <link href="{% static 'vendor/animate.css' %}/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
   <link href="{% static 'vendor/venobox/venobox.css' %}" rel="stylesheet">
   <link href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
   <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
@@ -29,7 +33,8 @@
 
   <!-- Template Main CSS File -->
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
-
+  {% block headscript %}
+  {% endblock headscript %}
 </head>
 
 <body>
@@ -45,9 +50,9 @@
           <li class="active"><a href="{% url 'home' %}">Home</a></li>
 
 
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Residential</a></li>
-            <li><a href="#">Commercial</a></li>
+            <li><a href="{% url 'about_us' %}">About Us</a></li>
+            <li><a href="{% url 'residential' %}">Residential</a></li>
+            <li><a href="{% url 'commercial' %}">Commercial</a></li>
             <li class="drop-down"><a href="">Portfolio</a>
                 <ul>
                 <li><a href="#">Residential</a></li>
@@ -61,7 +66,7 @@
       </nav><!-- .nav-menu -->
 
       <div class="header-social-links">
-        <a href="{% url 'home' %}#call-to-action" class="btn btn-primary">Free Estimate</a>
+        <button data-url="{% url 'estimate_request' %}" class="btn btn-primary js-estimate-request">Free Estimate</button>
       </div>
 
     </div>
@@ -69,6 +74,13 @@
 
   {% block content %}
   {% endblock content %}
+
+  <div class="modal fade" id="modal-base">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -91,11 +103,11 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Residential</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Commercial</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Free Estimate</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'home' %}">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'about_us' %}">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'residential' %}">Residential</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'commercial' %}">Commercial</a></li>
+              <li><i class="bx bx-chevron-right"></i> <button type="button" data-url="{% url 'estimate_request' %}" class="js-estimate-request anchor-button">Free Estimate</button></li>
             </ul>
           </div>
 
@@ -134,10 +146,8 @@
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://www.facebook.com/exteriordesinganddevelopment/" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/exteriordesignanddevelopment/" class="instagram"><i class="bx bxl-instagram"></i></a>
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -145,7 +155,6 @@
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'vendor/jquery.easing/jquery.easing.min.js' %}"></script>
   <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
@@ -155,10 +164,18 @@
   <script src="{% static 'vendor/waypoints/jquery.waypoints.min.js' %}"></script>
   <script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
   <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/counterup/counterup.min.js' %}"></script>
 
   <!-- Template Main JS File -->
   <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
 
+  <script>
+  $('#modal-base').on('hidden.bs.modal', function(e) {
+    document.getElementById("estimateForm").reset();
+    $('#modal-base').modal('hide');
+  }); 
+  </script>
 </body>
 
 </html>

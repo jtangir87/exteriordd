@@ -12,8 +12,12 @@ a {
 }
 
 a:hover {
-  color: #2ae149;
+  color: #ff0000;
   text-decoration: none;
+}
+
+button:hover {
+  color: #ff0000;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -802,6 +806,138 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Testimonials
+--------------------------------------------------------------*/
+.testimonials-area {
+  background: rgba(0, 0, 0, 0) no-repeat fixed center top/cover;
+  height: auto;
+  width: 100%;
+}
+
+.testi-inner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.testi-overly {
+  background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.quate {
+  border: 1px dotted #fff;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-block;
+  font-size: 24px;
+  height: 70px;
+  line-height: 70px;
+  width: 70px;
+}
+
+.quate:hover {
+  color: #fff;
+}
+
+.testi-img img {
+  border: 1px dotted rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+  height: 80px;
+  margin: 0 auto;
+  padding: 5px;
+  transition: background 0.6s ease-out 0s;
+  width: 80px !important;
+}
+
+.testi-text p {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.5em;
+  margin: 20px 0;
+  letter-spacing: 1px;
+}
+
+.testi-text h6 {
+  color: #fff;
+  font-size: 20px;
+}
+
+.testimonial-carousel.owl-carousel.owl-theme .owl-controls .owl-dots div.owl-dot > span {
+  background: #fff none repeat scroll 0 0;
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.testimonial-carousel.owl-carousel.owl-theme .owl-controls .owl-dots {
+  bottom: -30px;
+  display: block;
+  left: 50%;
+  margin-left: -20px;
+  position: absolute;
+}
+
+.testimonial-content {
+  margin-bottom: 15px;
+}
+
+.testimonial-carousel.owl-carousel.owl-theme .owl-controls .owl-dots div.owl-dot {
+  display: inline-block;
+  margin: 0 3px;
+}
+
+.testimonial-carousel.owl-carousel.owl-theme .owl-controls .owl-dots div.owl-dot.active span {
+  background: #3EC1D5;
+}
+
+.testimonial-carousel .owl-nav,
+.testimonial-carousel .owl-dots {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.testimonial-carousel .owl-dot {
+  display: inline-block;
+  margin: 0 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ddd !important;
+}
+
+.testimonial-carousel .owl-dot.active {
+  background-color: #3ec1d5 !important;
+}
+
+.testi-text.text-center > h6 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.guest-rev {
+  color: #ddd;
+  font-size: 16px;
+}
+
+.guest-rev > a {
+  color: #3EC1D5;
+  font-size: 14px;
+}
+
+
+
+/*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
 .portfolio #portfolio-flters {
@@ -897,7 +1033,7 @@ section {
 }
 
 .portfolio .portfolio-item .portfolio-links a:hover {
-  color: #57e76f;
+  color: #ff0000;
 }
 
 .portfolio .portfolio-item:hover .portfolio-info {
@@ -975,6 +1111,54 @@ section {
 
 .about-us .content p:last-child {
   margin-bottom: 0;
+}
+
+.skills .skills-content ul {
+  list-style: none;
+  padding: 0;
+  margin-left: 25%;
+  padding-bottom: 40px;
+}
+
+.skills .skills-content ul li {
+  padding: 10px 0 0 28px;
+  position: relative;
+}
+
+.skills .skills-content ul i {
+  left: 0;
+  top: 7px;
+  position: absolute;
+  font-size: 20px;
+  color: #e73f3f;
+}
+
+.skills .skills-content .section-title {
+  padding-bottom: 5px;
+}
+
+.credentials .credentials-content {
+  margin-bottom: 40px;
+}
+
+.credentials .credentials-content img {
+  max-height:200px;
+  max-width: 300px;
+}
+
+.btn-consultation {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 20px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px 0px 10px 0px!important;
+  color: #fff;
+  border: 2px solid #fff;
+  background-color: transparent;
 }
 
 /*--------------------------------------------------------------
@@ -1211,7 +1395,7 @@ section {
 }
 
 .pricing .btn-buy:hover {
-  background: #2ae149;
+  background: #ff0000;
 }
 
 .pricing .featured h3 {
@@ -1369,6 +1553,10 @@ section {
   padding: 0;
 }
 
+.area-padding {
+  padding: 70px 0px 80px;
+}
+
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
@@ -1505,7 +1693,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-  background: #2ae149;
+  background: #ff0000;
 }
 
 @-webkit-keyframes animate-loading {
@@ -1662,7 +1850,7 @@ section {
 }
 
 .call-to-action .php-email-form button[type="submit"]:hover {
-  background: #2ae149;
+  background: #ff0000;
 }
 
 @-webkit-keyframes animate-loading {
@@ -2462,3 +2650,29 @@ section {
   color: #fff;
   text-decoration: none;
 }
+
+#footer .anchor-button {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  color: rgba(255, 255, 255, 0.6);
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul button:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-primary {
+  color: white;
+  background-color: #e73f3f;
+  border-color: #e73f3f;
+}   
+
+.btn-primary:hover {
+  background-color: #ff0000;
+  border-color: #ff0000;
+}   

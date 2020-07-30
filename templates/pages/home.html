@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block headscript %}
+{% load bootstrap4 %}
+{{estimate_form.media}}
+{% endblock headscript %}
+
 {% block content %}
 
 <!-- ======= Hero Section ======= -->
@@ -207,35 +213,20 @@
 
                 <div class="row mt-1 justify-content-center" data-aos="fade-up">
                   <div class="col-lg-12">
-                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                    <form action="{% url 'estimate_request' %}" id="homeEstimateForm" method="post" role="form" class="php-email-form">
+                    {% csrf_token %}
                       <div class="form-row">
-                        <div class="col-md-4 form-group">
-                          <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                          <div class="validate"></div>
-                        </div>
-                        <div class="col-md-4 form-group">
-                          <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
-                          <div class="validate"></div>
-                        </div>
-                        <div class="col-md-4 form-group">
-                          <input type="phone" class="form-control" name="phone" id="phone" placeholder="Best Phone Number" data-rule="phone" data-msg="Please enter a valid phone number" />
-                          <div class="validate"></div>
-                        </div>
+                          {% bootstrap_field estimate_form.name form_group_class="col-md-4 form-group" show_label=False %}
+                          {% bootstrap_field estimate_form.email form_group_class="col-md-4 form-group" show_label=False %}
+                          {% bootstrap_field estimate_form.phone form_group_class="col-md-4 form-group" show_label=False %}
                       </div>
                       <div class="form-row">
-                        <div class="col-md-4 form-group">
-                          <input type="text" name="date" class="form-control" id="date" placeholder="Requested Date" />
-                          <div class="validate"></div>
-                        </div>
-                        <div class="col-md-4 form-group">
-                          <input type="text" class="form-control" name="city" id="city" placeholder="Your City"/>
-                        </div>
-                        <div class="col-md-4 form-group">
-                          <input type="text" class="form-control" name="state" id="state" placeholder="Your State" />
-                        </div>
+                          {% bootstrap_field estimate_form.requested_date form_group_class="col-md-4 form-group" show_label=False %} 
+                          {% bootstrap_field estimate_form.city form_group_class="col-md-4 form-group" show_label=False %} 
+                          {% bootstrap_field estimate_form.state form_group_class="col-md-4 form-group" show_label=False %} 
                       </div>
                       <div class="form-group">
-                        <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="How can we help you?"></textarea>
+                        <textarea class="form-control" name="message" id="id_message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="How can we help you?"></textarea>
                         <div class="validate"></div>
                       </div>
                       <div class="text-center"><button type="submit">Schedule Estimate</button></div>
@@ -253,7 +244,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Commercial Services</strong></h2>
+          <h2><strong>Commercial Services</strong></h2>
           <p>The Exterior Design & Development team is proficient in handling all types of commercial roofing projects and custom building exteriors – no matter how small or large they may be. 
             Our commercial roofing team understands that commercial establishments need expedited repair and replacement services that will not interfere with your day to day business operation. 
             We are diligent in ensuring that you will be inconvenienced as little as possible while our roofing contractors are conducting repairs and installations.</p>
@@ -334,110 +325,56 @@
     </section><!-- End Services Section -->
 
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          <h2>Testimonials</h2>
+  <!-- ======= Testimonials Section ======= -->
+    <div class="testimonials-area" style="background-image: url({% static 'img/testi-background.png' %});">
+      <div class="testi-inner area-padding">
+        <div class="testi-overly"></div>
+        <div class="container ">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <!-- Start testimonials Start -->
+              <div class="testimonial-content text-center">
+                <div class="section-title">
+                  <h2 style="color:white;"><strong>Testimonials</strong></h2>
+                </div>
+                <!-- start testimonial carousel -->
+                <div class="owl-carousel testimonial-carousel">
+                  <div class="single-testi">
+                    <div class="testi-text">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
+                      </p>
+                      <h6>Customer 1</h6>
+                    </div>
+                  </div>
+                  <!-- End single item -->
+                  <div class="single-testi">
+                    <div class="testi-text">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
+                      </p>
+                      <h6>Customer 2</h6>
+                    </div>
+                  </div>
+                  <!-- End single item -->
+                  <div class="single-testi">
+                    <div class="testi-text">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
+                      </p>
+                      <h6>Customer 3</h6>
+                    </div>
+                  </div>
+                  <!-- End single item -->
+                </div>
+              </div>
+              <!-- End testimonials end -->
+            </div>
+            <!-- End Right Feature -->
+          </div>
         </div>
-
-        <div class="row portfolio-container" data-aos="fade-up">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 1</h4>
-              <p>App</p>
-              <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 2</h4>
-              <p>App</p>
-              <a href="assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 2</h4>
-              <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 3</h4>
-              <p>App</p>
-              <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 1</h4>
-              <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 3</h4>
-              <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-        </div>
-
       </div>
-    </section><!-- End Portfolio Section -->
+    </div><!-- End Testimonials Section -->
 
     <!-- ======= Our Clients Section ======= -->
     <section id="clients" class="clients">

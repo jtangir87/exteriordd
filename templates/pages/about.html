@@ -1,0 +1,247 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block headscript %}
+<link href="{% static 'css/counters.css' %}" rel="stylesheet">
+{% endblock headscript %}
+
+
+{% block content %}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>About Us</h2>
+          <ol>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li>About Us</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about-us" class="about-us">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img class="img-fluid" src="{% static 'img/about-us.png' %}" />
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
+            <h5>Exterior Design and Development has been providing professional roofing systems and exteriors throughout Southeastern Pennsylvania for over 20 years</h5>
+            <p>
+              Our principles of using the finest quality products and providing skilled craftsmanship and superior service set us apart from other PA exterior design 
+              and roofing contractors. In recent years, vast improvements in construction technology have provided more options than ever for replacement, maintenance, 
+              and repairs. We have the ability to evaluate your property and determine the most effective roofing or exterior solution to meet your objectives. For more 
+              than a decade, we have maintained and uncompromising commitment to the highest standards in sales, service, and installation.
+            </p>
+            {% comment %} <ul>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequa</li>
+              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in</li>
+            </ul> {% endcomment %}
+            <p class="font-italic">
+              If you are looking for a roofing or exterior contractor in Pennsylvania, we thank you for your interest in Exterior Design & Development. We look forward to working with you on your roofing project.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+        <!-- ======= Counter CTA Section ======= -->
+        <section id="about-us-counter" class="about-us-counter section-cta">
+          <div class="container" data-aos="fade-up">
+    
+                <div class="row counters" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-3 col-12 text-center">
+                    <span data-toggle="counter-up">21</span>
+                    <p>Years of Experience</p>
+                </div>
+                <div class="col-lg-3 col-12 text-center">
+                    <span data-toggle="counter-up">385</span>
+                    <p>Roofing Projects</p>
+                </div>
+
+                <div class="col-lg-3 col-12 text-center">
+                    <span data-toggle="counter-up">722,482</span>
+                    <p>Shingles Installed</p>
+                </div>
+
+                <div class="col-lg-3 col-12 text-center">
+                    <span data-toggle="counter-up">108,947</span>
+                    <p>Siding Panels Installed</p>
+                </div>
+                    <div class="col-12 text-center">
+                        <a href="{% url 'contact_us' %}" class="btn-consultation">Contact Us</a>
+                    </div>
+
+
+                </div>
+            
+          </div>
+        </section><!-- End Counter CTA Section -->
+   
+
+    <!-- ======= Our Skills Section ======= -->
+    <section id="skills" class="skills">
+      <div class="container">
+
+
+
+        <div class="row skills-content">
+
+          <div class="col-lg-6" data-aos="fade-up">
+            <div class="section-title" data-aos="fade-up">
+                <h2><strong>Skills</strong></h2>
+            </div>
+            <ul>
+              <li><i class="ri-check-double-line"></i> New Construction</li>
+              <li><i class="ri-check-double-line"></i> Re-Roofing</li>
+              <li><i class="ri-check-double-line"></i> Vegetative Roof Systems</li>
+              <li><i class="ri-check-double-line"></i> Architectural Metals</li>
+              <li><i class="ri-check-double-line"></i> Metal Wall Panels</li>
+              <li><i class="ri-check-double-line"></i> Coatings</li>
+              <li><i class="ri-check-double-line"></i> Repairs</li>
+              <li><i class="ri-check-double-line"></i> Preventative Maintenance</li>
+              <li><i class="ri-check-double-line"></i> Waterproofing</li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="section-title" data-aos="fade-up">
+                <h2><strong>Property Types</strong></h2>
+            </div>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Residential Homes</li>
+              <li><i class="ri-check-double-line"></i> Multi-Family Residential Developments</li>
+              <li><i class="ri-check-double-line"></i> Mixed Use Buildings</li>
+              <li><i class="ri-check-double-line"></i> Commercial Buildings</li>
+              <li><i class="ri-check-double-line"></i> Industrial Buildings</li>
+              <li><i class="ri-check-double-line"></i> Schools</li>
+              <li><i class="ri-check-double-line"></i> Hospitals</li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Our Skills Section -->
+
+        <!-- ======= Credentials CTA Section ======= -->
+        <section id="credentials" class="credentials section-cta">
+          <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Credentials</strong></h2>
+            </div>
+                <div class="row credentials-content" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-4 col-12 text-center">
+                        <img class="img-fluid" src="{% static 'img/certs/certainteed.png' %}" >
+                    </div>
+                    <div class="col-lg-8 col-12">
+                        <h5>Certainteed SELECT Shingle Master</h5>
+                        <p> This is the top level CertainTeed roofing credential, and represents the highest standards of excellence, quality and knowledge in the shingle roofing industry. An SSM has shown extensive knowledge of shingle installation and quality through rigorous testing, and have provided CertainTeed with proof of workers' compensation and liability insurance. Only an SSM can offer you the highest level of SureStart PLUS™ extended warranty coverage when an Integrity Roof System is installed on your home.</p>
+                    </div>
+                </div>
+                <div class="row credentials-content" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-8 col-12">
+                        <h5>GAF Master Elite</h5>
+                        <p> Master Elite® Certification is GAF's factory certification program that provides ongoing training to roofing contractors and assurance to you that the roof will be completed well and professionally. Only 2% of all roofing contractors have qualified as Master Elite® Choosing a GAF Master Elite® contractor is your assurance that you'll be dealing with a quality, and dependable professional contractor.</p>
+                    </div>
+                    <div class="col-lg-4 col-12 text-center">
+                        <img class="img-fluid cert-horiz" src="{% static 'img/certs/gaf-master-elite.png' %}" >
+                    </div>
+                </div>
+                <div class="row credentials-content" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-4 col-12 text-center">
+                        <img class="img-fluid" src="{% static 'img/certs/tamko-pro.png' %}" >
+                    </div>
+                    <div class="col-lg-8 col-12">
+                        <h5>TAMKO Pro</h5>
+                        <p> TAMKO Pro Roofing Contractors are a select group of qualified, experienced installers with a strong knowledge base of TAMKO’s product offerings. TAMKO Pros can offer a variety of popular shingle styles such as Heritage® Vintage®, Heritage® Woodgate®, Heritage® Premium, Heritage®, Elite Glass-Seal® and MetalWorks® Steel Shingles. They also have the ability to offer TAMKO’s Mastercraft Limited Warranty Enhancement at no additional cost to the homeowner along with the abilities to purchase custom marketing materials and access to lead-generating tools.</p>
+                    </div>
+                </div>
+                <div class="col-12 text-center">
+                    <button type="button" data-url="{% url 'estimate_request' %}" class="btn-consultation js-estimate-request">Schedule Your Free Estimate</button>
+                </div>
+            </div>
+            
+          </div>
+        </section><!-- End Counter CTA Section -->
+
+
+    <!-- ======= Our Clients Section ======= -->
+    <section id="clients" class="clients">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Recent Projects</h2>
+        </div>
+
+        <div class="row no-gutters clients-wrap clearfix" data-aos="fade-up">
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="assets/img/clients/client-7.png" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="assets/img/clients/client-8.png" class="img-fluid" alt="">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Our Clients Section -->
+
+  </main><!-- End #main -->
+
+
+{% endblock content %}
+
+
+

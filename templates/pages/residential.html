@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block headscript %}
+<link href="{% static 'css/video_header.css' %}" rel="stylesheet">
+{% endblock headscript %}
+{% block content %}
+
+
+<section id="video-header">
+  <div class="overlay"></div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="{% static 'video/drone-house-hb.mp4' %}" type="video/mp4">
+  </video>
+  <div class="container h-100">
+    <div class="d-flex h-100 text-center align-items-center">
+      <div class="w-100 text-white">
+        <h1 class="display-3">Residential Services</h1>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- ======= Residential Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Residential Services</strong></h2>
+          <p>We take pride in designing, installing, and repairing roofing systems that are durable, attractive, and long lasting - up to 40 years!</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box iconbox-blue">
+              <div class="icon-img">
+                <img class="img-fluid service-img" src="{% static 'img/services/roof-replacement2.png' %}" >
+              </div>
+              <h4><a href="">Roof Replacement</a></h4>
+              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box iconbox-orange ">
+              <div class="icon-img">
+                <img class="img-fluid service-img" src="{% static 'img/services/missing-shingles.jpg' %}" >
+              </div>
+              <h4><a href="">Roof Repairs</a></h4>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box iconbox-pink">
+              <div class="icon-img">
+                <img class="img-fluid service-img" src="{% static 'img/services/water-roof.jpg' %}" >
+              </div>
+              <h4><a href="">Preventative Maintenance</a></h4>
+              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box iconbox-yellow">
+              <div class="icon-img">
+                <img class="img-fluid service-img" src="{% static 'img/services/house-siding.png' %}" >
+              </div>
+              <h4><a href="">Siding</a></h4>
+              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box iconbox-red">
+              <div class="icon-img">
+                <img class="img-fluid service-img" src="{% static 'img/services/vapor-barrier.jpg' %}" >
+              </div>
+              <h4><a href="">Waterproofing</a></h4>
+              <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box iconbox-teal">
+              <div class="icon-img">
+                <img class="img-fluid service-img" src="{% static 'img/services/budget-management.png' %}" >
+              </div>
+              <h4><a href="">Budget Management</a></h4>
+              <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+{% endblock content %}

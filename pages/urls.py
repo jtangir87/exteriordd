@@ -16,8 +16,25 @@ Including another URLconf
 from django.urls import path
 from django.views.generic import TemplateView
 
+from .views import HomeView, estimate_request, ContactUsView
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    path("contact-us", TemplateView.as_view(template_name="pages/contact_us.html"), name="contact_us"),
+    path("", HomeView.as_view(), name="home"),
+    path("contact-us", ContactUsView.as_view(), name="contact_us",),
+    path("free-estimate", estimate_request, name="estimate_request"),
+    path(
+        "about-us",
+        TemplateView.as_view(template_name="pages/about.html"),
+        name="about_us",
+    ),
+    path(
+        "residential",
+        TemplateView.as_view(template_name="pages/residential.html"),
+        name="residential",
+    ),
+    path(
+        "commercial",
+        TemplateView.as_view(template_name="pages/commercial.html"),
+        name="commercial",
+    ),
 ]
