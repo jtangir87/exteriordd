@@ -1077,6 +1077,9 @@ section {
 /*--------------------------------------------------------------
 # About Us
 --------------------------------------------------------------*/
+#about-us-page {
+  padding-top: 150px;
+}
 .about-us .content h2 {
   font-weight: 700;
   font-size: 42px;
@@ -1161,6 +1164,23 @@ section {
   background-color: transparent;
 }
 
+.skills .map {
+  position: absolute;
+  left: 74%;
+  top: 900px;
+  height: 700px;
+  width: 400px!important;
+  max-width: none!important;
+}
+
+@media(max-width:950px) {
+  .skills .service-area-title {
+    display:none!important;
+  }
+  .skills .map {
+    display:none!important;
+  }
+}
 /*--------------------------------------------------------------
 # Our Team
 --------------------------------------------------------------*/

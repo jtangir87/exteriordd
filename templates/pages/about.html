@@ -9,25 +9,13 @@
 
 <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>About Us</h2>
-          <ol>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li>About Us</li>
-          </ol>
-        </div>
-
-      </div>
-    </section><!-- End Breadcrumbs -->
 
     <!-- ======= About Us Section ======= -->
-    <section id="about-us" class="about-us">
+    <section id="about-us-page" class="about-us">
       <div class="container" data-aos="fade-up">
-
+        <div class="section-title">
+          <h2>About Exterior Design & Development</strong></h2>
+        </div>
         <div class="row content">
           <div class="col-lg-6" data-aos="fade-right">
             <img class="img-fluid" src="{% static 'img/about-us.png' %}" />
@@ -95,7 +83,7 @@
 
         <div class="row skills-content">
 
-          <div class="col-lg-6" data-aos="fade-up">
+          <div class="col-lg-4" data-aos="fade-up">
             <div class="section-title" data-aos="fade-up">
                 <h2><strong>Skills</strong></h2>
             </div>
@@ -112,7 +100,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="section-title" data-aos="fade-up">
                 <h2><strong>Property Types</strong></h2>
             </div>
@@ -128,6 +116,19 @@
 
           </div>
 
+            <img class="map" src="{% static 'img/service-map.png' %}" />    
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            
+
+            <div class="section-title service-area-title" data-aos="fade-up">
+                <h2 style="background-color:white;"><strong>Service Area</strong></h2>
+            </div>
+                <ul>
+                    <li style="background-color:white; width:160px;"><i class="ri-check-double-line"></i> Southeastern PA </li>
+                    <li style="background-color:white; width:120px;"><i class="ri-check-double-line"></i> New Jersey</li>
+                </ul>
+            </div>
+        </div>
         </div>
 
       </div>
