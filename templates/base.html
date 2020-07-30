@@ -47,20 +47,20 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="{% url 'home' %}">Home</a></li>
+          <li {% if request.resolver_match.view_name == 'home' %}class="active"{% else %}{% endif %}><a href="{% url 'home' %}">Home</a></li>
 
 
-            <li><a href="{% url 'about_us' %}">About Us</a></li>
-            <li><a href="{% url 'residential' %}">Residential</a></li>
-            <li><a href="{% url 'commercial' %}">Commercial</a></li>
-            <li class="drop-down"><a href="">Portfolio</a>
+            <li {% if request.resolver_match.view_name == 'about_us' %}class="active"{% else %}{% endif %}><a href="{% url 'about_us' %}">About Us</a></li>
+            <li {% if request.resolver_match.view_name == 'residential' %}class="active"{% else %}{% endif %}><a href="{% url 'residential' %}">Residential</a></li>
+            <li {% if request.resolver_match.view_name == 'commercial' %}class="active"{% else %}{% endif %}><a href="{% url 'commercial' %}">Commercial</a></li>
+            <li {% if '/portfolop' in request.path %}class="active drop-down"{% else %}{% endif %} class="drop-down"><a href="">Portfolio</a>
                 <ul>
                 <li><a href="#">Residential</a></li>
                 <li><a href="#">Commercial</a></li>
                 </ul>
             </li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="{% url 'contact_us' %}">Contact</a></li>
+            <li {% if '/blog' in request.path %}class="active"{% else %}{% endif %}><a href="#">Blog</a></li>
+            <li {% if request.resolver_match.view_name == 'contact_us' %}class="active"{% else %}{% endif %}><a href="{% url 'contact_us' %}">Contact</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
