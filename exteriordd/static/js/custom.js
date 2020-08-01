@@ -49,6 +49,9 @@ $(function () {
             dataType: 'json',
             success: function (data) {
                 if (data.form_is_valid) {
+                    $('#' + form.attr("id")).each(function () {
+                        this.reset();
+                    });
                     $("#modal-base .modal-content").html(data.html_success_message);
                     $("#modal-base").modal("show");
                 }
@@ -68,6 +71,7 @@ $(function () {
     $(".js-estimate-request").on("click", loadForm);
     $("#modal-base").on("submit", ".js-estimate-request-form", saveForm);
     $("#homeEstimateForm").on("submit", homesaveForm);
+    $("#financingForm").on("submit", homesaveForm);
 
 });
 

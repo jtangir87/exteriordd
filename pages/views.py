@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from django.http import JsonResponse
 from django.template.loader import render_to_string
 
-from .forms import EstimateForm, ContactUsForm
+from .forms import EstimateForm, ContactUsForm, FinancingForm
 
 # Create your views here.
 
@@ -14,6 +14,16 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["estimate_form"] = EstimateForm()
+        return context
+
+
+class ResidentialServicesView(TemplateView):
+    template_name = "pages/residential.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["estimate_form"] = EstimateForm()
+        context["financing_form"] = FinancingForm()
         return context
 
 
@@ -57,4 +67,27 @@ def estimate_request(request):
             {"estimate_form": estimate_form},
             request=request,
         )
+    return JsonResponse(data)
+
+
+def financing_request(request):
+    data = dict()
+    if request.method == "POST":
+        form = FinancingForm(request.POST or None)
+        if form.is_valid():
+            context = {
+                "name": form.cleaned_data["name"],
+                "email": form.cleaned_data["email"],
+                "phone": form.cleaned_data["phone"],
+            }
+
+            ### SEND EMAIL ###
+
+            data["html_success_message"] = render_to_string(
+                "pages/includes/partial_financing_submit_success.html", request=request,
+            )
+            data["form_is_valid"] = True
+
+        else:
+            data["form_is_valid"] = False
     return JsonResponse(data)

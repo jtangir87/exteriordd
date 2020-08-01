@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block headscript %}
+{% load bootstrap4 %}
+{{estimate_form.media}}
 <link href="{% static 'css/video_header.css' %}" rel="stylesheet">
 {% endblock headscript %}
 {% block content %}
@@ -25,7 +27,9 @@
 
         <div class="section-title">
           <h2>Residential Services</strong></h2>
-          <p>We take pride in designing, installing, and repairing roofing systems that are durable, attractive, and long lasting - up to 40 years!</p>
+          <p>Exterior Design & Development has provided its residential customers with a wide variety of roof exterior solutions that are durable, attractive, and long lasting – for up to 40 years. 
+          We know a roofing or exterior project can be an intimidating task for a home owner, that is why our experienced team of exterior professionals will help guide you through the entire process so you can make 
+          the most informed decision.</p>
         </div>
 
         <div class="row">
@@ -93,4 +97,382 @@
 
       </div>
     </section><!-- End Services Section -->
+
+        <!-- ======= Residential CTA Section ======= -->
+        <section id="call-to-action" class="call-to-action section-cta">
+          <div class="container" data-aos="fade-up">
+    
+            <div class="section-title">
+              <h2>Schedule Your Free Estimate Today!</strong></h2>
+            </div>
+
+                <div class="row mt-1 justify-content-center" data-aos="fade-up">
+                  <div class="col-lg-12">
+                    <form action="{% url 'estimate_request' %}" id="homeEstimateForm" method="post" role="form" class="php-email-form">
+                    {% csrf_token %}
+                      <div class="form-row">
+                          {% bootstrap_field estimate_form.name form_group_class="col-md-4 form-group" show_label=False %}
+                          {% bootstrap_field estimate_form.email form_group_class="col-md-4 form-group" show_label=False %}
+                          {% bootstrap_field estimate_form.phone form_group_class="col-md-4 form-group" show_label=False %}
+                      </div>
+                      <div class="form-row">
+                          {% bootstrap_field estimate_form.requested_date form_group_class="col-md-4 form-group" show_label=False %} 
+                          {% bootstrap_field estimate_form.city form_group_class="col-md-4 form-group" show_label=False %} 
+                          {% bootstrap_field estimate_form.state form_group_class="col-md-4 form-group" show_label=False %} 
+                      </div>
+                      <div class="form-group">
+                        <textarea class="form-control" name="message" id="id_message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="How can we help you?"></textarea>
+                        <div class="validate"></div>
+                      </div>
+                      <div class="text-center"><button type="submit">Schedule Estimate</button></div>
+                    </form>
+                  </div>
+        
+                </div>
+    
+          </div>
+        </section><!-- End Residential CTA Section -->
+
+    <!-- ======= Our Matierials Section ======= -->
+    <section id="materials" class="materials">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Roofing <strong>Materials</strong></h2>
+          <p>We are problem solvers, not just roofing contractors and we take pride in this designation. Our team of roofing professionals can help guide you in making an informed decision when it comes to your roofing and exterior needs.</p>
+        </div>
+
+        <div class="row materials-content">
+        <div class="col-lg-12 text-center" data-aos="fade-up">
+            <ul class="nav nav-pills mb-5 nav-justified" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-shingle-tab" data-toggle="pill" href="#pills-shingle" role="tab" aria-controls="pills-shingle" aria-selected="true">Shingle</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-tile-tab" data-toggle="pill" href="#pills-tile" role="tab" aria-controls="pills-tile" aria-selected="false">Tile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-slate-tab" data-toggle="pill" href="#pills-slate" role="tab" aria-controls="pills-slate" aria-selected="false">Slate</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-shake-tab" data-toggle="pill" href="#pills-shake" role="tab" aria-controls="pills-shake" aria-selected="false">Shake</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-metal-tab" data-toggle="pill" href="#pills-metal" role="tab" aria-controls="pills-metal" aria-selected="false">Metal</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-shingle" role="tabpanel" aria-labelledby="pills-shingle-tab">
+                    <div class="row">
+                        <div class="col-lg-12 mb-5">
+                            
+                            <img class="img-fluid res-material-img" src="{% static 'img/res-materials/asphalt-shingles.jpg' %}" > 
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 materials-description" data-aos="fade-up">
+                            <h4>Composite Asphalt Shingle</h4>
+                            <p>Composite asphalt shingle are the most popular roof found on more than 80% of all homes. Composite shingles use an organic or fiberglas base saturated
+                            with asphalt and the exposed surface is impregnated with small chips or reflective elements. 
+                            </p>
+
+                        </div>
+
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+                            <div class="progress">
+                                <span class="material">Price </span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress">
+                                <span class="material">Durability </span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress">
+                                <span class="material">Life Span </span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <span class="material">Warranty </span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--- Tile Tab --->
+                <div class="tab-pane fade" id="pills-tile" role="tabpanel" aria-labelledby="pills-tile-tab">
+                    <div class="row">
+                        <div class="col-lg-12 mb-5">
+                            
+                            <img class="img-fluid res-material-img" src="{% static 'img/res-materials/tile.jpg' %}" > 
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 materials-description" data-aos="fade-up">
+                            <h4>Tile</h4>
+                            <p>Tile roofs are incredibly strong and durable. The most common tiles are made from terracotta clay and ceramic. Tile roofs require
+                            sturdy roof framing to hold the weight of the tiles. 
+                            </p>
+
+                        </div>
+
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+                            <div class="progress">
+                                <span class="material">Price </span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress">
+                                <span class="material">Durability </span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress">
+                                <span class="material">Life Span </span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <span class="material">Warranty </span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>                
+                
+            
+                <!-- Slate Tab -->
+                <div class="tab-pane fade" id="pills-slate" role="tabpanel" aria-labelledby="pills-slate-tab">
+                    <div class="row">
+                        <div class="col-lg-12 mb-5">
+                            
+                            <img class="img-fluid res-material-img" src="{% static 'img/res-materials/slate.jpg' %}" > 
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 materials-description" data-aos="fade-up">
+                            <h4>Slate</h4>
+                            <p>Slate is the most durable of all roofing materials. Properly maintained, it can potentially last the lifetime of your home—even if 
+                            that lifetime is two centuries long</p>
+
+                        </div>
+
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+                            <div class="progress">
+                                <span class="material">Price </span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress">
+                                <span class="material">Durability </span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress">
+                                <span class="material">Life Span </span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <span class="material">Warranty </span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>                           
+                
+                
+                <!-- Shake Tab -->
+                <div class="tab-pane fade" id="pills-shake" role="tabpanel" aria-labelledby="pills-shake-tab">
+                    <div class="row">
+                        <div class="col-lg-12 mb-5">
+                            
+                            <img class="img-fluid res-material-img" src="{% static 'img/res-materials/wood-shingles.jpg' %}" > 
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 materials-description" data-aos="fade-up">
+                            <h4>Shake</h4>
+                            <p>Shakes are made from thin, wedge-shaped pieces of natural wood. The most common wood shakes are cedar and yellow pine. Wood shake roofs are very visually appealing 
+                            and have a longer lifespan than traditional asphalt shingles. </p>
+
+                        </div>
+
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+                            <div class="progress">
+                                <span class="material">Price </span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress">
+                                <span class="material">Durability </span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress">
+                                <span class="material">Life Span </span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <span class="material">Warranty </span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>                  
+                <!-- Metal Tab-->
+                <div class="tab-pane fade" id="pills-metal" role="tabpanel" aria-labelledby="pills-metal-tab">
+                    <div class="row">
+                        <div class="col-lg-12 mb-5">
+                            
+                            <img class="img-fluid res-material-img" src="{% static 'img/res-materials/metal.jpg' %}" > 
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 materials-description" data-aos="fade-up">
+                            <h4>Metal</h4>
+                            <p>Metal roofs are virtually maintenance free and extremely durable. The most common metals used are steel and aluminum but copper and zinc are also options. 
+                            These roofs are install by laying large steel panels on the roof deck with the seams overlapping in raised ridges that run vertically along the roof slope</p>
+
+                        </div>
+
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+                            <div class="progress">
+                                <span class="material">Price </span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress">
+                                <span class="material">Durability </span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress">
+                                <span class="material">Life Span </span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <span class="material">Warranty </span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                
+                
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Our Skills Section -->
+
+        <!-- ======= Residential CTA Section ======= -->
+        <section id="call-to-action" class="call-to-action section-cta" style="background-image: url({% static 'img/financing-background.png' %});">
+          <div class="container" data-aos="fade-up">
+    
+            <div class="section-title">
+              <h2>Inquire About Financing Options</strong></h2>
+            </div>
+
+                <div class="row mt-1 justify-content-center" data-aos="fade-up">
+                  <div class="col-lg-12">
+                    <form action="{% url 'financing_request' %}" id="financingForm" method="post" role="form" class="php-email-form" style="background-color:transparent;">
+                    {% csrf_token %}
+                      <div class="form-row">
+                          {% bootstrap_field financing_form.name form_group_class="col-md-4 form-group" show_label=False %}
+                          {% bootstrap_field financing_form.email form_group_class="col-md-4 form-group" show_label=False %}
+                          {% bootstrap_field financing_form.phone form_group_class="col-md-4 form-group" show_label=False %}
+                      </div>
+
+                          <div class="text-center"><button type="submit">Submit</button></div>
+                      
+                    </form>
+                  </div>
+        
+                </div>
+    
+          </div>
+        </section><!-- End Residential CTA Section -->
+
+<!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Recent Residential Projects</h2>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 1</h4>
+              <p>App</p>
+              <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+ 
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
 {% endblock content %}

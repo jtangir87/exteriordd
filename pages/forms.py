@@ -22,3 +22,8 @@ class ContactUsForm(forms.Form):
         widget=forms.Textarea(attrs={"placeholder": "How can we help?"})
     )
 
+
+class FinancingForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    phone = forms.CharField(max_length=15)

@@ -1257,15 +1257,16 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Our Skills
+# Our Materials
 --------------------------------------------------------------*/
-.skills .progress {
+.materials .progress {
   height: 50px;
   display: block;
   background: none;
+  overflow: visible;
 }
 
-.skills .progress .skill {
+.materials .progress .material {
   padding: 0;
   margin: 0 0 6px 0;
   text-transform: uppercase;
@@ -1275,20 +1276,34 @@ section {
   color: #111;
 }
 
-.skills .progress .skill .val {
+.materials .progress .material .val {
   float: right;
   font-style: normal;
 }
 
-.skills .progress-bar-wrap {
+.materials .progress-bar-wrap {
   background: #e7e7e7;
 }
 
-.skills .progress-bar {
+.materials .progress-bar {
   width: 1px;
   height: 10px;
   transition: .9s;
+  background-color: #496bb3;
+}
+
+.materials .materials-content .nav-pills .nav-link.active {
   background-color: #e73f3f;
+}
+
+.materials .materials-content .res-material-img {
+  max-height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.materials .materials-content .materials-description {
+  text-align: left;
 }
 
 /*--------------------------------------------------------------
