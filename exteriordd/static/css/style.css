@@ -2711,3 +2711,10 @@ section {
   background-color: #ff0000;
   border-color: #ff0000;
 }   
+
+
+.comm-services .service-img {
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+}
