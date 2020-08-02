@@ -2752,7 +2752,7 @@ section {
   color: #e73f3f;
 }
 
-@media (max-width:500px) {
+@media (max-width:500.99px) {
   .comm-services .no-mobile {
     display:none!important;
   } 
@@ -2763,6 +2763,13 @@ section {
   }
 }
 
+@media (max-width:500.99px) {
+  .parallax {
+    background-position: center;
+  }
+}
+
+@media (min-width:501px) {
 .parallax {
 
   /* Set a specific height */
@@ -2773,4 +2780,5 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
 }
