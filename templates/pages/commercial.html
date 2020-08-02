@@ -21,20 +21,51 @@
 </section>
 
 
+    <!-- ======= About Us Section ======= -->
+    <section id="about-us-page" class="about-us" style="padding-top:60px;">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Commercial Services</strong></h2>
+        </div>
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img class="img-fluid" src="{% static 'img/services/contractor-hardhat-logo.png' %}" />
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
+            <h5>The Exterior Design & Development team is proficient in handling all types of commercial roofing projects and custom building exteriors – no matter how small or large they may be. </h5>
+            <p>
+            Our commercial roofing team understands that commercial establishments need expedited repair and replacement services that will not interfere with your day to day business operation. 
+            We are diligent in ensuring that you will be inconvenienced as little as possible while our roofing contractors are conducting repairs and installations.
+            </p>
+            <p><strong>We specialize in:</strong>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Roofing & Exterior Panel Systems</li>
+              <li><i class="ri-check-double-line"></i> Air & Vapor Barriers</li>
+              <li><i class="ri-check-double-line"></i> Waterproofing</li>
+            </ul>
+            </p>
+            <p class="font-italic">
+              Whether you own a retail store, restaurant, office building, supermarket, or any other type of business, you can trust in our ability to adhere to high-quality standards when we are completing your project.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
 
 <!-- ======= Commercial Services Section ======= -->
     <section id="comm-services" class="comm-services">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2><strong>Commercial Services</strong></h2>
-          <p>The Exterior Design & Development team is proficient in handling all types of commercial roofing projects and custom building exteriors – no matter how small or large they may be. 
-            Our commercial roofing team understands that commercial establishments need expedited repair and replacement services that will not interfere with your day to day business operation. 
-            We are diligent in ensuring that you will be inconvenienced as little as possible while our roofing contractors are conducting repairs and installations.</p>
+          <h2><strong>Roofing & Exteriors</strong></h2>
+          <p>Our Commercial Roofing experts are able to offer comprehensive guarantees that other roofing contractors can’t (and won’t) typically offer. Our team has a great deal of expertise in all types of roofing installations, repairs, 
+          and custom exteriors so we are an easy choice if you want exceptional services at rates that you can afford.</p>
         </div>
 
         <div class="row mb-4">
-          <div class="col-lg-4 col-md-12" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-4 col-md-12 no-mobile" data-aos="zoom-in" data-aos-delay="100">
                 <img class="service-img" src="{% static 'img/services/epdm-roof.jpg' %}" >
               
           </div>
@@ -42,6 +73,7 @@
           <div class="col-lg-8 col-md-12" data-aos="zoom-in" data-aos-delay="200">
 
               <h4><a href="">EPDM Roofing Systems</a></h4>
+              <img class="service-img mobile-only" src="{% static 'img/services/epdm-roof.jpg' %}" >
               <p>EPDM (ethylene propylene diene terpolymer) has the longest proven performance record of all single-ply membranes. Its high-performance synthetic rubber compound provides exceptional 
               weathering in climates across the globe. The material is easy to install and can be either fully adhered, mechanically attached or ballasted.</p>
               <p>Multiple attachment types and colors are available, which provides design flexibility and variety. Plus, white EPDM membranes offer the lowest carbon footprint of all single-ply membranes—making 
@@ -51,11 +83,12 @@
           <div class="col-lg-8 col-md-12" data-aos="zoom-in" data-aos-delay="200">
 
               <h4><a href="">TPO Roofing Systems</a></h4>
+              <img class="service-img mobile-only" src="{% static 'img/services/tpo.jpg' %}" >
               <p>Thermoplastic polyolefin (TPO) is leading the trend in white, reflective, energy-efficient, single-ply roofing systems—and is the fastest-growing commercial roofing membrane on the 
               market today. TPO has gained broad industry acceptance for its many installation and performance advantages, including its ability to be heat-welded, creating a monolithic roof while 
               providing strength and durability. Its white reflective membrane also meets the criteria of LEED®, ENERGY STAR® and other environmental programs.</p>
           </div>
-          <div class="col-lg-4 col-md-12" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-4 col-md-12 no-mobile" data-aos="zoom-in" data-aos-delay="100">
                 <img class="service-img" src="{% static 'img/services/tpo.jpg' %}" >
               
           </div>
@@ -63,7 +96,7 @@
 
         </div>
         <div class="row mb-4">
-          <div class="col-lg-4 col-md-12" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-4 col-md-12 no-mobile" data-aos="zoom-in" data-aos-delay="100">
                 <img class="service-img" src="{% static 'img/services/metal-roof.png' %}" >
               
           </div>
@@ -71,6 +104,7 @@
           <div class="col-lg-8 col-md-12" data-aos="zoom-in" data-aos-delay="200">
 
               <h4><a href="">Metal Roofing Systems</a></h4>
+              <img class="service-img mobile-only" src="{% static 'img/services/metal-roof.png' %}" >
               <p> 
                 Metal roofing offers many benefits in the design of a building. It is visually striking and extremely durable, yet lightweight and easy to work with. Plus, there are a wide variety of options for every budget, 
                 look, function and scale, turning just about any design you can imagine into a possibility. And it’s a great choice for meeting sustainability initiatives.</p>
@@ -80,23 +114,25 @@
           <div class="col-lg-8 col-md-12" data-aos="zoom-in" data-aos-delay="200">
 
               <h4><a href="">Modified Bitumen</a></h4>
+              <img class="service-img mobile-only" src="{% static 'img/services/modified-bitumen.png' %}" >
               <p>Modified bitumen roofing systems are multi-ply systems usually consisting of 2-3 layers of a composite roll and surfaced with granules or foils. These systems are 
               typically utilized on low slope roof areas in conjunction with varying insulations and deck systems, but are sometimes installed on steep slope substrates.</p>
           </div>
-          <div class="col-lg-4 col-md-12" data-aos="zoom-in" data-aos-delay="100">
-                <img class="service-img" src="{% static 'img/services/tpo.jpg' %}" >
+          <div class="col-lg-4 col-md-12 no-mobile" data-aos="zoom-in" data-aos-delay="100">
+                <img class="service-img" src="{% static 'img/services/modified-bitumen.png' %}" >
               
           </div>
         </div>
         <div class="row mb-4">
-          <div class="col-lg-4 col-md-12" data-aos="zoom-in" data-aos-delay="100">
-                <img class="service-img" src="{% static 'img/services/metal-roof.png' %}" >
+          <div class="col-lg-4 col-md-12 no-mobile" data-aos="zoom-in" data-aos-delay="100">
+                <img class="service-img" src="{% static 'img/services/architectural-sheet-metal.png' %}" >
               
           </div>
 
           <div class="col-lg-8 col-md-12" data-aos="zoom-in" data-aos-delay="200">
 
               <h4><a href="">Architectural Sheet Metal</a></h4>
+              <img class="service-img mobile-only" src="{% static 'img/services/architectural-sheet-metal.png' %}" >
               <p> 
                 Architectural sheet metal is the custom fabrication of metal flashings, trim, and sometimes ornate metals utilizing a multitude of materials. The metal types utilized range from conventional metals like 
                 steel and aluminum to high end materials like zinc, copper, lead, and metals with custom colored finishes.</p>
@@ -106,19 +142,113 @@
           <div class="col-lg-8 col-md-12" data-aos="zoom-in" data-aos-delay="200">
 
               <h4><a href="">Vegetative Roofs (GREEN Roof)</a></h4>
+              <img class="service-img mobile-only" src="{% static 'img/services/green-roof.jpg' %}" >
               <p>Green or Vegetative Roofs are composed of several layers including an underlying waterproofing system, soil media and vegetation. Benefits of this system include: lower energy costs, LEED recognition, air quality, 
               reduced storm water runoff, and an extended roof life..</p>
           </div>
-          <div class="col-lg-4 col-md-12" data-aos="zoom-in" data-aos-delay="100">
-                <img class="service-img" src="{% static 'img/services/tpo.jpg' %}" >
+          <div class="col-lg-4 col-md-12 no-mobile" data-aos="zoom-in" data-aos-delay="100">
+                <img class="service-img" src="{% static 'img/services/green-roof.jpg' %}" >
               
           </div>
         </div>
+        <div class="row mb-4">
+          <div class="col-lg-4 col-md-12 no-mobile" data-aos="zoom-in" data-aos-delay="100">
+                <img class="service-img" src="{% static 'img/services/waterproofing.png' %}" >
+              
+          </div>
 
+          <div class="col-lg-8 col-md-12" data-aos="zoom-in" data-aos-delay="200">
+
+              <h4><a href="">Waterproofing</a></h4>
+              <img class="service-img mobile-only" src="{% static 'img/services/waterproofing.png' %}" >
+              <p> 
+                
+              Commercial waterproofing services from Exterior Design & Development include professional installation of high quality waterproofing materials to new or existing structures to keep water out and prevent damage to exterior surfaces from the weather.
+              We specialize in:
+              <div class="row">
+                <div class="col-md-4">
+                    <ul>
+                      <li><i class="ri-check-double-line"></i> Bentonite Clay Waterproofing</li>
+                      <li><i class="ri-check-double-line"></i> Fluid Applied Waterproofing </li>
+                      <li><i class="ri-check-double-line"></i> Hot Applied Waterproofing</li>
+                      <li><i class="ri-check-double-line"></i> Self-Adhering Sheet Waterproofing</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                      <li><i class="ri-check-double-line"></i> Self-Adhering Blindside Membranes</li>
+                      <li><i class="ri-check-double-line"></i> Silicone Sealants</li>
+                      <li><i class="ri-check-double-line"></i> Urethane Sealants</li>
+                      <li><i class="ri-check-double-line"></i> Epoxy Security Sealants</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                      <li><i class="ri-check-double-line"></i> Firestop Sealants</li>
+                      <li><i class="ri-check-double-line"></i> Clear Water Repellents</li>
+                      <li><i class="ri-check-double-line"></i> Sound Barrier Sealants</li>
+                      <li><i class="ri-check-double-line"></i> Elastomeric Wall Coatings</li>
+                    </ul>
+                </div>
+              </div>
+
+              </p>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-lg-8 col-md-12" data-aos="zoom-in" data-aos-delay="200">
+
+              <h4><a href="">Air & Vapor Barriers</a></h4>
+              <img class="service-img mobile-only" src="{% static 'img/services/vapor-barrier2.jpg' %}" >
+              <p>Air and Vapor Barrier Systems are used to enhance overall building performance. The primary purpose of the air barrier system is to prevent the air from leaking into and out of the building enclosure. 
+              Implementing a cavity wall air barrier ensures the occupants are more comfortable by providing a draft free space. Barriers also protect occupants from pollutants entering the building. 
+              These pollutants can range from pollen, suspended particulates and odors to biological contaminants on the other side.
+
+                </p>
+          </div>
+          <div class="col-lg-4 col-md-12 no-mobile" data-aos="zoom-in" data-aos-delay="100">
+                <img class="service-img" src="{% static 'img/services/vapor-barrier2.jpg' %}" >
+              
+          </div>
+        </div>
         </div>
 
       </div>
     </section><!-- End Services Section -->
+
+        <!-- ======= Residential CTA Section ======= -->
+        <section id="call-to-action" class="call-to-action section-cta parallax" style="background-image: url({% static 'img/contractor-handshake.png' %});background-position:center;">
+          <div class="container" data-aos="fade-up">
+    
+
+
+                <div class="row justify-content-center" data-aos="fade-up" style="background-color:rgba(0, 0, 0, 0.5);">
+                  <div class="col-lg-12">
+                      <div class="section-title mt-4">
+                        <h2>Partner with Exterior Design & Development</strong></h2>
+                      </div>
+                      <div class="row mb-4" style="margin-left:10%; margin-right:10%">
+                        <div class="col-lg-6 info mt-4 mt-lg-0" style="background:none;">
+                          <i class="icofont-envelope"></i>
+                          <h4 style="color:white;">Email:</h4>
+                          <p style="font-size:20px; font-weight:900;"><a href="mailto:info@exteriordd.com">info@exteriordd.com</a></p>
+                        </div>
+
+                        <div class="col-lg-6 info mt-4 mt-lg-0 " style="background:none;">
+                          <i class="icofont-phone"></i>
+                          <h4 style="color:white;">Call:</h4>
+                          <p style="font-size:20px; font-weight:900;"><a href="tel:2159477100">(215) 947-7100</a><br><a href="tel:18886061950">1 (888) 606-1950</a> </p>
+                        </div>
+                      </div>
+
+                      
+                  </div>
+        
+                </div>
+    
+          </div>
+        </section><!-- End Residential CTA Section -->
+
 <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container">

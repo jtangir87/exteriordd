@@ -37,3 +37,16 @@
     opacity: 0.5;
     z-index: 1;
   }
+
+  #video-header .display-3 {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  @media (max-width:576px) {
+    #video-header .display-3 {
+      font-size: 3rem;
+    }
+  
+
+  }
