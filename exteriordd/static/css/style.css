@@ -218,7 +218,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Mobile Navigation */
 .mobile-nav-toggle {
   position: fixed;
-  right: 15px;
+  right: 10px;
   top: 15px;
   z-index: 9998;
   border: 0;
@@ -336,7 +336,6 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #e73f3f;
   border-color: #e73f3f;
   height: 44px;
-  margin-right: 12px;
 }
 
 
@@ -823,7 +822,6 @@ section {
 # Testimonials
 --------------------------------------------------------------*/
 .testimonials-area {
-  background: rgba(0, 0, 0, 0) no-repeat fixed center top/cover;
   height: auto;
   width: 100%;
 }
@@ -837,7 +835,7 @@ section {
 
 .testi-overly {
   background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
-  height: 500px;
+  height: 100%;
   left: 0;
   position: absolute;
   top: 0;
