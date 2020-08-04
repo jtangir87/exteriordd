@@ -17,6 +17,15 @@ class HomeView(TemplateView):
         return context
 
 
+class ResidentialLandingPage(TemplateView):
+    template_name = "pages/landing_residential.html"
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["estimate_form"] = EstimateForm()
+        return context
+
+
 class ResidentialServicesView(TemplateView):
     template_name = "pages/residential.html"
 

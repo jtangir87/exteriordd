@@ -22,6 +22,7 @@ from .views import (
     ContactUsView,
     ResidentialServicesView,
     financing_request,
+    ResidentialLandingPage,
 )
 
 urlpatterns = [
@@ -34,10 +35,13 @@ urlpatterns = [
         TemplateView.as_view(template_name="pages/about.html"),
         name="about_us",
     ),
-    path("residential", ResidentialServicesView.as_view(), name="residential",),
+    path("residential-services", ResidentialServicesView.as_view(), name="residential",),
     path(
-        "commercial",
+        "commercial-services",
         TemplateView.as_view(template_name="pages/commercial.html"),
         name="commercial",
     ),
+
+    ## LANDING PAGES ##
+    path('residential', ResidentialLandingPage.as_view(), name="landing_residential"),
 ]
