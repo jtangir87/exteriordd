@@ -40,8 +40,10 @@ $(function () {
     };
 
 
-    var homesaveForm = function () {
+    var homesaveForm = function (e) {
+        e.preventDefault();
         var form = $(this);
+        console.log("form submitted")
         $.ajax({
             url: form.attr("action"),
             data: form.serialize(),
@@ -71,7 +73,10 @@ $(function () {
     $(".js-estimate-request").on("click", loadForm);
     $("#modal-base").on("submit", ".js-estimate-request-form", saveForm);
     $("#homeEstimateForm").on("submit", homesaveForm);
+    $("#landingHeroForm").on("submit", homesaveForm);
+    $("#landingCTAForm").on("submit", homesaveForm);
     $("#financingForm").on("submit", homesaveForm);
+    $("#contactUsForm").on("submit", homesaveForm);
 
 });
 

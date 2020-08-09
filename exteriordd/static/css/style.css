@@ -336,6 +336,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #e73f3f;
   border-color: #e73f3f;
   height: 44px;
+  margin-right: 12px;
 }
 
 
@@ -674,7 +675,7 @@ section {
 --------------------------------------------------------------*/
 .services .icon-box {
   text-align: center;
-  padding: 30px 20px 40px 20px;
+  padding: 30px 20px 5px 20px;
   transition: all ease-in-out 0.3s;
   background: #fff;
 }
@@ -730,7 +731,7 @@ section {
   font-size: 22px;
 }
 
-.services .icon-box h4 a {
+.services .icon-box h4 {
   color: #111;
   transition: ease-in-out 0.3s;
 }
@@ -1150,6 +1151,11 @@ section {
 
 .skills .skills-content .section-title {
   padding-bottom: 5px;
+}
+
+.credentials {
+  color: white;
+  background-color: #496bb3;
 }
 
 .credentials .credentials-content {
@@ -2750,13 +2756,17 @@ section {
   color: #e73f3f;
 }
 
+.comm-services h4 {
+  color: #e73f3f;
+}
+
 @media (max-width:500.99px) {
-  .comm-services .no-mobile {
+  .no-mobile {
     display:none!important;
   } 
 }
 @media (min-width:501px) {
-  .comm-services .mobile-only {
+  .mobile-only {
     display: none!important;
   }
 }
@@ -2779,4 +2789,13 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
 }
+}
+
+.portfolio-title {
+  padding-top: 150px; 
+  padding-bottom: 0px;
+}
+
+.portfolio-list {
+  padding-top: 10px; 
 }

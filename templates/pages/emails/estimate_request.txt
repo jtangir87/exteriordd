@@ -1,0 +1,12 @@
+NEW ESTIMATE REQUEST
+
+Name : {{name}}
+Email : {{email}}
+Phone : {{phone}}
+
+Requested Date: {{requested_date}}
+City: {{city}}
+State: {{state}}
+
+Message : 
+    {{message}}

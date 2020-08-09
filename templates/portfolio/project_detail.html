@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block meta_tags %}
+  <title>Exterior Design and Development | Portfolio | Serving Southeastern Pennsylvania and New Jersey</title>
+  <meta content="Residential and commercial roofing and siding experts servicing Southeastern Pennsylvania and New Jersey for over 20 years" name="description">
+  <meta content="residential roofing, residential roofer, residential siding, residential exteriors, commercial roofing, commercial exteriors, commercial siding, commercial roofing systems" name="keywords">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Exterior Design & Development | Portfolio" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://www.exteriordd.com" />
+  <meta property="og:image" content="{% static 'img/exteriordd-og-img.png' %}" />
+  <meta property="og:description" content="Residential and commercial roofing and siding experts servicing Southeastern Pennsylvania and New Jersey for over 20 years" />
+  <meta property="og:site_name" content="Exterior Design & Development" />
+
+{% endblock meta_tags %}
+
+
+{% block content %}
+
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Portfolio Details</h2>
+          <ol>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li>
+                {% if project.category.name == "Residential" %}
+                    <a href="{% url 'portfolio:residential_projects' %}">Residential Portfolio</a>
+                {% else %}
+                    <a href="{% url 'portfolio:commercial_projects' %}">Commercial Portfolio</a>
+                {% endif %}
+                
+            </li>
+            <li>Portfolio Details</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container" data-aos="fade-up">
+        <div class="portfolio-details-container">
+
+          <div class="owl-carousel portfolio-details-carousel">
+            <img src="{{project.default_img.url}}" class="img-fluid" alt="">
+            {% for image in project.project_images.all  %}
+                <img src="{{image.image.url}}" class="img-fluid" alt="">
+            {% endfor %}
+          </div>
+
+          <div class="portfolio-info">
+            <h3>Project Information</h3>
+            <ul>
+              <li><strong>Category</strong>: {{project.category.name}}</li>
+              <li><strong>Project</strong>: {{project.name}}</li>
+              <li><strong>Project date</strong>: {{project.date}}</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="portfolio-description">
+          <h2>{{project.name}}</h2>
+          <p>
+            {{project.description}}
+          </p>
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+
+{% endblock content %}

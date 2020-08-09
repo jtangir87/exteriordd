@@ -1,5 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block meta_tags %}
+  <title>Exterior Design and Development | Commercial Services | Serving Southeastern Pennsylvania and New Jersey</title>
+  <meta content="Residential and commercial roofing and siding experts servicing Southeastern Pennsylvania and New Jersey for over 20 years" name="description">
+  <meta content="residential roofing, residential roofer, residential siding, residential exteriors, commercial roofing, commercial exteriors, commercial siding, commercial roofing systems" name="keywords">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Exterior Design & Development | Commercial Services" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://www.exteriordd.com/commercial-services" />
+  <meta property="og:image" content="{% static 'img/exteriordd-og-img.png' %}" />
+  <meta property="og:description" content="Residential and commercial roofing and siding experts servicing Southeastern Pennsylvania and New Jersey for over 20 years" />
+  <meta property="og:site_name" content="Exterior Design & Development" />
+
+{% endblock meta_tags %}
+
 {% block headscript %}
 <link href="{% static 'css/video_header.css' %}" rel="stylesheet">
 {% endblock headscript %}
@@ -57,32 +73,34 @@
 <!-- ======= Commercial Services Section ======= -->
     <section id="comm-services" class="comm-services">
       <div class="container" data-aos="fade-up">
-
+        <a name="epdmRoofing"></a>
         <div class="section-title">
           <h2><strong>Roofing & Exteriors</strong></h2>
           <p>Our Commercial Roofing experts are able to offer comprehensive guarantees that other roofing contractors can’t (and won’t) typically offer. Our team has a great deal of expertise in all types of roofing installations, repairs, 
           and custom exteriors so we are an easy choice if you want exceptional services at rates that you can afford.</p>
         </div>
-
+        
         <div class="row mb-4">
           <div class="col-lg-4 col-md-12 no-mobile" data-aos="zoom-in" data-aos-delay="100">
                 <img class="service-img" src="{% static 'img/services/epdm-roof.jpg' %}" >
               
           </div>
-
+          
           <div class="col-lg-8 col-md-12" data-aos="zoom-in" data-aos-delay="200">
 
-              <h4><a href="">EPDM Roofing Systems</a></h4>
+              <h4>EPDM Roofing Systems</h4>
               <img class="service-img mobile-only" src="{% static 'img/services/epdm-roof.jpg' %}" >
               <p>EPDM (ethylene propylene diene terpolymer) has the longest proven performance record of all single-ply membranes. Its high-performance synthetic rubber compound provides exceptional 
               weathering in climates across the globe. The material is easy to install and can be either fully adhered, mechanically attached or ballasted.</p>
               <p>Multiple attachment types and colors are available, which provides design flexibility and variety. Plus, white EPDM membranes offer the lowest carbon footprint of all single-ply membranes—making 
           </div>
+          <a name="tpoRoofing"></a>
         </div>
+        
         <div class="row mb-4">
           <div class="col-lg-8 col-md-12" data-aos="zoom-in" data-aos-delay="200">
 
-              <h4><a href="">TPO Roofing Systems</a></h4>
+              <h4>TPO Roofing Systems</h4>
               <img class="service-img mobile-only" src="{% static 'img/services/tpo.jpg' %}" >
               <p>Thermoplastic polyolefin (TPO) is leading the trend in white, reflective, energy-efficient, single-ply roofing systems—and is the fastest-growing commercial roofing membrane on the 
               market today. TPO has gained broad industry acceptance for its many installation and performance advantages, including its ability to be heat-welded, creating a monolithic roof while 
@@ -93,27 +111,28 @@
               
           </div>
 
-
+          <a name="metalRoofing"></a>
         </div>
         <div class="row mb-4">
           <div class="col-lg-4 col-md-12 no-mobile" data-aos="zoom-in" data-aos-delay="100">
-                <img class="service-img" src="{% static 'img/services/metal-roof.png' %}" >
+                <img class="service-img" src="{% static 'img/services/metal-roof.jpg' %}" >
               
           </div>
 
           <div class="col-lg-8 col-md-12" data-aos="zoom-in" data-aos-delay="200">
 
-              <h4><a href="">Metal Roofing Systems</a></h4>
-              <img class="service-img mobile-only" src="{% static 'img/services/metal-roof.png' %}" >
+              <h4>Metal Roofing Systems</h4>
+              <img class="service-img mobile-only" src="{% static 'img/services/metal-roof.jpg' %}" >
               <p> 
                 Metal roofing offers many benefits in the design of a building. It is visually striking and extremely durable, yet lightweight and easy to work with. Plus, there are a wide variety of options for every budget, 
                 look, function and scale, turning just about any design you can imagine into a possibility. And it’s a great choice for meeting sustainability initiatives.</p>
           </div>
+          <a name="bitumenRoofing"></a>
         </div>
         <div class="row mb-4">
           <div class="col-lg-8 col-md-12" data-aos="zoom-in" data-aos-delay="200">
 
-              <h4><a href="">Modified Bitumen</a></h4>
+              <h4>Modified Bitumen</h4>
               <img class="service-img mobile-only" src="{% static 'img/services/modified-bitumen.png' %}" >
               <p>Modified bitumen roofing systems are multi-ply systems usually consisting of 2-3 layers of a composite roll and surfaced with granules or foils. These systems are 
               typically utilized on low slope roof areas in conjunction with varying insulations and deck systems, but are sometimes installed on steep slope substrates.</p>
@@ -121,27 +140,30 @@
           <div class="col-lg-4 col-md-12 no-mobile" data-aos="zoom-in" data-aos-delay="100">
                 <img class="service-img" src="{% static 'img/services/modified-bitumen.png' %}" >
               
+              
           </div>
+          <a name="sheetMetalRoofing"></a>
         </div>
         <div class="row mb-4">
           <div class="col-lg-4 col-md-12 no-mobile" data-aos="zoom-in" data-aos-delay="100">
-                <img class="service-img" src="{% static 'img/services/architectural-sheet-metal.png' %}" >
+                <img class="service-img" src="{% static 'img/services/architectural-sheet-metal.jpg' %}" >
               
           </div>
 
           <div class="col-lg-8 col-md-12" data-aos="zoom-in" data-aos-delay="200">
 
-              <h4><a href="">Architectural Sheet Metal</a></h4>
-              <img class="service-img mobile-only" src="{% static 'img/services/architectural-sheet-metal.png' %}" >
+              <h4>Architectural Sheet Metal</h4>
+              <img class="service-img mobile-only" src="{% static 'img/services/architectural-sheet-metal.jpg' %}" >
               <p> 
                 Architectural sheet metal is the custom fabrication of metal flashings, trim, and sometimes ornate metals utilizing a multitude of materials. The metal types utilized range from conventional metals like 
                 steel and aluminum to high end materials like zinc, copper, lead, and metals with custom colored finishes.</p>
           </div>
+          <a name="greenRoofing"></a>
         </div>
         <div class="row mb-4">
           <div class="col-lg-8 col-md-12" data-aos="zoom-in" data-aos-delay="200">
 
-              <h4><a href="">Vegetative Roofs (GREEN Roof)</a></h4>
+              <h4>Vegetative Roofs (GREEN Roof)</h4>
               <img class="service-img mobile-only" src="{% static 'img/services/green-roof.jpg' %}" >
               <p>Green or Vegetative Roofs are composed of several layers including an underlying waterproofing system, soil media and vegetation. Benefits of this system include: lower energy costs, LEED recognition, air quality, 
               reduced storm water runoff, and an extended roof life..</p>
@@ -150,6 +172,7 @@
                 <img class="service-img" src="{% static 'img/services/green-roof.jpg' %}" >
               
           </div>
+          <a name="waterproofing"></a>
         </div>
         <div class="row mb-4">
           <div class="col-lg-4 col-md-12 no-mobile" data-aos="zoom-in" data-aos-delay="100">
@@ -159,7 +182,7 @@
 
           <div class="col-lg-8 col-md-12" data-aos="zoom-in" data-aos-delay="200">
 
-              <h4><a href="">Waterproofing</a></h4>
+              <h4>Waterproofing</h4>
               <img class="service-img mobile-only" src="{% static 'img/services/waterproofing.png' %}" >
               <p> 
                 
@@ -194,11 +217,12 @@
 
               </p>
           </div>
+          <a name="vaporBarrier"></a>
         </div>
         <div class="row mb-4">
           <div class="col-lg-8 col-md-12" data-aos="zoom-in" data-aos-delay="200">
 
-              <h4><a href="">Air & Vapor Barriers</a></h4>
+              <h4>Air & Vapor Barriers</h4>
               <img class="service-img mobile-only" src="{% static 'img/services/vapor-barrier2.jpg' %}" >
               <p>Air and Vapor Barrier Systems are used to enhance overall building performance. The primary purpose of the air barrier system is to prevent the air from leaking into and out of the building enclosure. 
               Implementing a cavity wall air barrier ensures the occupants are more comfortable by providing a draft free space. Barriers also protect occupants from pollutants entering the building. 
@@ -209,6 +233,24 @@
           <div class="col-lg-4 col-md-12 no-mobile" data-aos="zoom-in" data-aos-delay="100">
                 <img class="service-img" src="{% static 'img/services/vapor-barrier2.jpg' %}" >
               
+          </div>
+          <a name="metalWall"></a>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col-lg-4 col-md-12 no-mobile" data-aos="zoom-in" data-aos-delay="100">
+                <img class="service-img" src="{% static 'img/services/metal-wall-panels.jpg' %}" >
+              
+          </div>
+
+          <div class="col-lg-8 col-md-12" data-aos="zoom-in" data-aos-delay="200">
+
+              <h4>Metal Wall Panels</h4>
+              <img class="service-img mobile-only" src="{% static 'img/services/metal-wall-panels.jpg' %}" >
+              <p> 
+                 Metal wall panels have beautiful appearances for both interior and exterior applications on commercial or residential buildings.
+                They come in a wide variety of colors, have shiny or matte finishes, and can be shaped and formed into different patterns. The diverse nature of metal wall panels makes them extremely easy for architects and interior designers to use in their projects.
+                 Metal walls are considered to be eco-friendly and sustainable materials to use in building construction.</p>
           </div>
         </div>
         </div>
@@ -258,16 +300,17 @@
         </div>
 
         <div class="row portfolio-container" data-aos="fade-up">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+        {% for project in projects %}
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <img src="{{project.default_img.url}}" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>App 1</h4>
-              <p>App</p>
-              <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <h4>{{project.name}}</h4>
+              <p>{{project.date}}</p>
+              <a href="{{project.default_img.url}}" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="{% url 'portfolio:project_detail' pk=project.pk %}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
+        {% endfor %}
 
  
 

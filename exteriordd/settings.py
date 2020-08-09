@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "pages",
+    "portfolio",
     "bootstrap4",
     "bootstrap_datepicker_plus",
 ]
@@ -78,8 +79,11 @@ WSGI_APPLICATION = "exteriordd.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "exteriordd",
+        "USER": "postgres",
+        "PASSWORD": "Jst18506",
+        "HOST": "localhost",
     }
 }
 

@@ -1,4 +1,4 @@
-"""exteriordd URL Configuration
+"""portfolio URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -13,14 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
 
+from django.urls import path
+from .views import ResidentialProjectList, CommercialProjectList, ProjectDetail
+
+app_name = "portfolio"
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("", include("pages.urls")),
-    path("portfolio/", include("portfolio.urls")),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path("residential", ResidentialProjectList.as_view(), name="residential_projects"),
+    path("commercial", CommercialProjectList.as_view(), name="commercial_projects"),
+    path("<int:pk>", ProjectDetail.as_view(), name="project_detail"),
+]
+

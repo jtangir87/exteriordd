@@ -1,6 +1,22 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block meta_tags %}
+  <title>Exterior Design and Development | Home | Serving Southeastern Pennsylvania and New Jersey</title>
+  <meta content="Residential and commercial roofing and siding experts servicing Southeastern Pennsylvania and New Jersey for over 20 years" name="description">
+  <meta content="residential roofing, residential roofer, residential siding, residential exteriors, commercial roofing, commercial exteriors, commercial siding, commercial roofing systems" name="keywords">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Exterior Design & Development" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://www.exteriordd.com/" />
+  <meta property="og:image" content="{% static 'img/exteriordd-og-img.png' %}" />
+  <meta property="og:description" content="Residential and commercial roofing and siding experts servicing Southeastern Pennsylvania and New Jersey for over 20 years" />
+  <meta property="og:site_name" content="Exterior Design & Development" />
+
+{% endblock meta_tags %}
+
+
 {% block headscript %}
 {% load bootstrap4 %}
 {{estimate_form.media}}
@@ -32,7 +48,7 @@
               <h1>Residential</h1>
               <p>Our principles of using the finest quality products and providing skilled craftsmanship and superior service set us apart from other PA exterior design and roofing contractors.
               </p>
-              <div class="text-center"><a href="" class="btn-get-started">Schedule Free Estimate</a></div>
+              <div class="text-center"><button data-url="{% url 'estimate_request' %}" class="btn-get-started js-estimate-request" style="background: transparent;">Schedule Free Estimate</button></div>
             </div>
           </div>
         </div>
@@ -44,7 +60,7 @@
               <h1>Commercial</h1>
               <p>Our Commercial Roofing experts are able to offer comprehensive guarantees that other roofing contractors can’t (and won’t) typically offer. Our team has a great deal of expertise in all types of roofing 
               installations, repairs, and custom exteriors so we are an easy choice if you want exceptional services at rates that you can afford.</p>
-              <div class="text-center"><a href="" class="btn-get-started">Learn More</a></div>
+              <div class="text-center"><a href="{% url 'commercial' %}" class="btn-get-started">Learn More</a></div>
             </div>
           </div>
         </div>
@@ -145,7 +161,6 @@
                 <img class="img-fluid service-img" src="{% static 'img/services/roof-replacement2.png' %}" >
               </div>
               <h4><a href="{% url 'residential' %}">Roof Replacement</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
             </div>
           </a>
           </div>
@@ -157,7 +172,6 @@
                 <img class="img-fluid service-img" src="{% static 'img/services/missing-shingles.jpg' %}" >
               </div>
               <h4><a href="{% url 'residential' %}">Roof Repairs</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
             </div>
             </a>
           </div>
@@ -169,7 +183,6 @@
                 <img class="img-fluid service-img" src="{% static 'img/services/water-roof.jpg' %}" >
               </div>
               <h4><a href="{% url 'residential' %}">Preventative Maintenance</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
             </div>
             </a>
           </div>
@@ -181,7 +194,6 @@
                 <img class="img-fluid service-img" src="{% static 'img/services/house-siding.png' %}" >
               </div>
               <h4><a href="{% url 'residential' %}">Siding</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
             </div>
             </a>
           </div>
@@ -193,7 +205,6 @@
                 <img class="img-fluid service-img" src="{% static 'img/services/vapor-barrier.jpg' %}" >
               </div>
               <h4><a href="{% url 'residential' %}">Waterproofing</a></h4>
-              <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
             </div>
             </a>
           </div>
@@ -205,7 +216,6 @@
                 <img class="img-fluid service-img" src="{% static 'img/services/budget-management.png' %}" >
               </div>
               <h4><a href="{% url 'residential' %}">Budget Management</a></h4>
-              <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
             </div>
             </a>
           </div>
@@ -225,7 +235,7 @@
 
                 <div class="row mt-1 justify-content-center" data-aos="fade-up">
                   <div class="col-lg-12">
-                    <form action="{% url 'estimate_request' %}" id="homeEstimateForm" method="post" role="form" class="php-email-form">
+                    <form action="{% url 'estimate_request' %}" id="homeEstimateForm" method="post" class="php-email-form">
                     {% csrf_token %}
                       <div class="form-row">
                           {% bootstrap_field estimate_form.name form_group_class="col-md-4 form-group" show_label=False %}
@@ -266,18 +276,20 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box iconbox-blue">
               <div class="icon-img">
-                <img class="img-fluid service-img" src="{% static 'img/services/epdm-roof.jpg' %}" >
+                <a href="{% url 'commercial' %}#epdmRoofing">
+                <img class="img-fluid service-img" src="{% static 'img/services/epdm-roof.jpg' %}" > </a>
               </div>
-              <h4><a href="">EPDM Roofing Systems</a></h4>
+              <h4><a href="{% url 'commercial' %}#epdmRoofing">EPDM Roofing Systems</a></h4>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box iconbox-orange ">
               <div class="icon-img">
-                <img class="img-fluid service-img" src="{% static 'img/services/tpo.jpg' %}" >
+                <a href="{% url 'commercial' %}#tpoRoofing">
+                <img class="img-fluid service-img" src="{% static 'img/services/tpo.jpg' %}" > </a>
               </div>
-              <h4><a href="">TPO Roofing Systems</a></h4>
+              <h4><a href="{% url 'commercial' %}#tpoRoofing">TPO Roofing Systems</a></h4>
               <p></p>
             </div>
           </div>
@@ -285,40 +297,74 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box iconbox-pink">
               <div class="icon-img">
-                <img class="img-fluid service-img" src="{% static 'img/services/metal-roof.png' %}" >
+                <a href="{% url 'commercial' %}#metalRoofing">
+                <img class="img-fluid service-img" src="{% static 'img/services/metal-roof.jpg' %}" > </a>
               </div>
-              <h4><a href="">Metal Roofing Systems</a></h4>
-              <p>Metal roofing offers many benefits in the design of a building. It is visually striking and extremely durable, yet lightweight and easy to work with. </p>
+              <h4><a href="{% url 'commercial' %}#metalRoofing">Metal Roofing Systems</a></h4>
+              {% comment %} <p>Metal roofing offers many benefits in the design of a building. It is visually striking and extremely durable, yet lightweight and easy to work with. </p> {% endcomment %}
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box iconbox-yellow">
               <div class="icon-img">
-                <img class="img-fluid service-img" src="{% static 'img/services/modified-bitumen.png' %}" >
+                <a href="{% url 'commercial' %}#bitumenRoofing">
+                <img class="img-fluid service-img" src="{% static 'img/services/modified-bitumen.png' %}" > </a>
               </div>
-              <h4><a href="">Modified Bitumen</a></h4>
-              <p>Modified bitumen roofing systems are multi-ply systems usually consisting of 2-3 layers of a composite roll and surfaced with granules or foils.</p>
+              <h4><a href="{% url 'commercial' %}#bitumenRoofing">Modified Bitumen</a></h4>
+              {% comment %} <p>Modified bitumen roofing systems are multi-ply systems usually consisting of 2-3 layers of a composite roll and surfaced with granules or foils.</p> {% endcomment %}
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box iconbox-red">
               <div class="icon-img">
-                <img class="img-fluid service-img" src="{% static 'img/services/architectural-sheet-metal.png' %}" >
+                <a href="{% url 'commercial' %}#sheetMetalRoofing">
+                <img class="img-fluid service-img" src="{% static 'img/services/architectural-sheet-metal.jpg' %}" > </a>
               </div>
-              <h4><a href="">Architectural Sheet Metal</a></h4>
-              <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+              <h4><a href="{% url 'commercial' %}#sheetMetalRoofing">Architectural Sheet Metal</a></h4>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box iconbox-teal">
               <div class="icon-img">
-                <img class="img-fluid service-img" src="{% static 'img/services/green-roof.jpg' %}" >
+                <a href="{% url 'commercial' %}#greenRoofing">
+                <img class="img-fluid service-img" src="{% static 'img/services/green-roof.jpg' %}" > </a>
               </div>
-              <h4><a href="">Vegetative Roofs (GREEN Roof)</a></h4>
-              <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+              <h4><a href="{% url 'commercial' %}#greenRoofing">Vegetative Roofs (GREEN Roof)</a></h4>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box iconbox-yellow">
+              <div class="icon-img">
+              <a href="{% url 'commercial' %}#waterproofing">
+                <img class="img-fluid service-img" src="{% static 'img/home-slider-3.jpg' %}" > </a>
+              </div>
+              <h4><a href="{% url 'commercial' %}#waterproofing">Waterproofing</a></h4>
+              {% comment %} <p>Modified bitumen roofing systems are multi-ply systems usually consisting of 2-3 layers of a composite roll and surfaced with granules or foils.</p> {% endcomment %}
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box iconbox-red">
+              <div class="icon-img">
+              <a href="{% url 'commercial' %}#vaporBarrier">
+                <img class="img-fluid service-img" src="{% static 'img/services/vapor-barrier2.jpg' %}" > </a>
+              </div>
+              <h4><a href="{% url 'commercial' %}#vaporBarrier">Air & Vapor Barriers</a></h4>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box iconbox-teal">
+              <div class="icon-img">
+              <a href="{% url 'commercial' %}#metalWall">
+                <img class="img-fluid service-img" src="{% static 'img/services/metal-wall-panels.jpg' %}" > </a>
+              </div>
+              <h4><a href="{% url 'commercial' %}#metalWall">Metal Wall Panels</a></h4>
             </div>
           </div>
 

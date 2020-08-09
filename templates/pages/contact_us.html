@@ -1,6 +1,22 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% load bootstrap4 %}
+
+{% block meta_tags %}
+  <title>Exterior Design and Development | Contact Us | Serving Southeastern Pennsylvania and New Jersey</title>
+  <meta content="Residential and commercial roofing and siding experts servicing Southeastern Pennsylvania and New Jersey for over 20 years" name="description">
+  <meta content="residential roofing, residential roofer, residential siding, residential exteriors, commercial roofing, commercial exteriors, commercial siding, commercial roofing systems" name="keywords">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Exterior Design & Development | Contact Us" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://www.exteriordd.com/contact-us" />
+  <meta property="og:image" content="{% static 'img/exteriordd-og-img.png' %}" />
+  <meta property="og:description" content="Residential and commercial roofing and siding experts servicing Southeastern Pennsylvania and New Jersey for over 20 years" />
+  <meta property="og:site_name" content="Exterior Design & Development" />
+
+{% endblock meta_tags %}
+
 {% block content %}
   
 <main id="main">
@@ -45,7 +61,7 @@
 
         <div class="row mt-5 justify-content-center" data-aos="fade-up">
           <div class="col-lg-10">
-            <form action="{% url 'estimate_request' %}" method="post" role="form" class="php-email-form">
+            <form action="{% url 'contact_us_form' %}" method="post" role="form" class="php-email-form" id="contactUsForm">
               {% csrf_token %}
                 <div class="form-row">
                     {% bootstrap_field contact_form.name form_group_class="col-md-4 form-group" show_label=False %}
@@ -54,7 +70,6 @@
                 </div>
                 <div class="form-group">
                   <textarea class="form-control" name="message" id="id_message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="How can we help you?"></textarea>
-                  <div class="validate"></div>
                 </div>
                 <div class="text-center"><button type="submit">Send Message</button></div>
               </form>
@@ -69,4 +84,3 @@
 
 
 {% endblock content %}
-

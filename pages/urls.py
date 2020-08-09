@@ -21,13 +21,16 @@ from .views import (
     estimate_request,
     ContactUsView,
     ResidentialServicesView,
+    CommercialServicesView,
     financing_request,
     ResidentialLandingPage,
+    contact_us_form,
 )
 
 urlpatterns = [
     path("", HomeView.as_view(), name="home"),
-    path("contact-us", ContactUsView.as_view(), name="contact_us",),
+    path("contact-us", ContactUsView.as_view(), name="contact_us"),
+    path("contact-us-form", contact_us_form, name="contact_us_form"),
     path("free-estimate", estimate_request, name="estimate_request"),
     path("financing", financing_request, name="financing_request"),
     path(
@@ -35,13 +38,10 @@ urlpatterns = [
         TemplateView.as_view(template_name="pages/about.html"),
         name="about_us",
     ),
-    path("residential-services", ResidentialServicesView.as_view(), name="residential",),
     path(
-        "commercial-services",
-        TemplateView.as_view(template_name="pages/commercial.html"),
-        name="commercial",
+        "residential-services", ResidentialServicesView.as_view(), name="residential",
     ),
-
+    path("commercial-services", CommercialServicesView.as_view(), name="commercial",),
     ## LANDING PAGES ##
-    path('residential', ResidentialLandingPage.as_view(), name="landing_residential"),
+    path("residential", ResidentialLandingPage.as_view(), name="landing_residential"),
 ]

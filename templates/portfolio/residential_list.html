@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta_tags %}
+  <title>Exterior Design and Development | Residential Portfolio | Serving Southeastern Pennsylvania and New Jersey</title>
+  <meta content="Residential and commercial roofing and siding experts servicing Southeastern Pennsylvania and New Jersey for over 20 years" name="description">
+  <meta content="residential roofing, residential roofer, residential siding, residential exteriors, commercial roofing, commercial exteriors, commercial siding, commercial roofing systems" name="keywords">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Exterior Design & Development | Residential Portfolio" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://www.exteriordd.com/portfolio/residential" />
+  <meta property="og:image" content="{% static 'img/exteriordd-og-img.png' %}" />
+  <meta property="og:description" content="Residential and commercial roofing and siding experts servicing Southeastern Pennsylvania and New Jersey for over 20 years" />
+  <meta property="og:site_name" content="Exterior Design & Development" />
+
+{% endblock meta_tags %}
+
+{% block content %}
+
+    <!-- ======= Section ======= -->
+    <section id="portfolio-title" class="portfolio-title">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Residential Portfolio</strong></h2>
+        </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Section -->
+<!-- ======= Portfolio Section ======= -->
+    <section id="portfolio portfolio-list" class="portfolio portfolio-list">
+      <div class="container">
+
+
+        <div class="row portfolio-container" data-aos="fade-up">
+        {% for project in projects %}
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <img src="{{project.default_img.url}}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>{{project.name}}</h4>
+              <p>{{project.date}}<br>{{project.services}}</p>
+              <a href="{{project.default_img.url}}" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="{% url 'portfolio:project_detail' pk=project.pk %}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+        {% endfor %}
+
+
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+  </main><!-- End #main -->
+
+
+{% endblock content %}
