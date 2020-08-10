@@ -59,7 +59,7 @@
                 <li><a href="{% url 'portfolio:commercial_projects' %}">Commercial</a></li>
                 </ul>
             </li>
-            <li {% if '/blog' in request.path %}class="active"{% else %}{% endif %}><a href="#">Blog</a></li>
+            <li {% if '/blog' in request.path %}class="active"{% else %}{% endif %}><a href="{% url 'blog:blog_list' %}">Blog</a></li>
             <li {% if request.resolver_match.view_name == 'contact_us' %}class="active"{% else %}{% endif %}><a href="{% url 'contact_us' %}">Contact</a></li>
 
         </ul>

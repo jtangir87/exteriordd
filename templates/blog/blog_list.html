@@ -1,0 +1,54 @@
+{% extends 'blog/blog_base.html' %}
+{% load static %}
+{% load bootstrap_pagination %}
+
+{% block headscript %}
+<style>
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #E73F41;
+    border-color: #E73F41;
+}
+</style>
+{% endblock headscript %}
+
+{% block blog_content %}
+        {% for blog in blogs %}
+            <article class="entry" data-aos="fade-up">
+
+              <div class="entry-img">
+                <img src="{{blog.header_img.url}}" alt="" class="img-fluid">
+              </div>
+
+              <h1 class="entry-title">
+                <a href="{% url 'blog:blog_detail' slug=blog.slug %}">{{blog.title}}</a>
+              </h1>
+
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="{% url 'blog:blog_detail' slug=blog.slug %}"><time datetime="2020-01-01">{{blog.created_at}}</time></a></li>
+                  {% comment %} <li class="d-flex align-items-center"><i class="icofont-comment"></i> <a href="blog-single.html">12 Comments</a></li> {% endcomment %}
+                </ul>
+              </div>
+
+              <div class="entry-content">
+                <p>
+                  {{blog.post|safe}}
+                </p>
+                <div class="read-more">
+                  <a href="blog-single.html">Read More</a>
+                </div>
+              </div>
+
+            </article><!-- End blog entry -->
+
+        {% endfor %}
+
+
+
+            <div class="blog-pagination">
+                {% bootstrap_paginate blogs extra_pagination_classes="justify-content-center"%}
+            </div>
+
+{% endblock blog_content %}

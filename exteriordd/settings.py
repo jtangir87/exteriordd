@@ -39,8 +39,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "pages",
     "portfolio",
+    "blog",
     "bootstrap4",
     "bootstrap_datepicker_plus",
+    "bootstrap_pagination",
+    "tinymce",
 ]
 
 MIDDLEWARE = [
@@ -122,13 +125,19 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "exteriordd/static")]
 STATIC_URL = "/static/"
 
+
 # MEDIA FOLDER SETTINGS
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
-
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent-emails")
+
+
+TINYMCE_DEFAULT_CONFIG = {
+    "plugins": "table,spellchecker,paste,searchreplace,code,preview,image,lists,media",
+    "toolbar": "numlist bullist image hr forecolor backcolor",
+}
 
 
 try:
