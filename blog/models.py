@@ -27,11 +27,11 @@ def blog_uploads(instance, filename):
 class BlogPost(models.Model):
     title = models.CharField(max_length=200)
     categories = models.ManyToManyField(BlogCategory)
-    page_css = HTMLField(blank=True, null=True)
+    page_css = models.TextField(blank=True, null=True)
     header_img = models.ImageField(upload_to=blog_uploads)
     slug = AutoSlugField(populate_from="title")
     post = HTMLField()
-    page_js = HTMLField(blank=True, null=True)
+    page_js = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     published = models.BooleanField(default=False)
 

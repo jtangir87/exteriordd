@@ -16,6 +16,11 @@
 
 {% endblock meta_tags %}
 
+{% block headscript %}
+<style>
+{{blog.page_css|safe}}
+</style>
+{% endblock headscript %}
 
 {% block blog_content %}
 
@@ -61,3 +66,10 @@
 
             </article><!-- End blog entry -->
 {% endblock blog_content %}
+
+
+{% block footscript %}
+<script>
+{{blog.page_js|safe}}
+</script>
+{% endblock footscript %}
