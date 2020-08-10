@@ -22,6 +22,12 @@
 </style>
 {% endblock headscript %}
 
+
+{% block breadcrumb %}
+    <li><a href="{% url 'blog:blog_list' %}">Blog</a></li>
+    <li>{{blog.title}}</li>
+{% endblock breadcrumb %}
+
 {% block blog_content %}
 
   <article class="entry entry-single" data-aos="fade-up">
@@ -57,9 +63,9 @@
                 </div>
 
                 <div class="float-right share">
-                  <a href="" title="Share on Twitter"><i class="icofont-twitter"></i></a>
-                  <a href="" title="Share on Facebook"><i class="icofont-facebook"></i></a>
-                  <a href="" title="Share on Instagram"><i class="icofont-instagram"></i></a>
+                  <a href="https://twitter.com/home?status={{full_url}}" title="Share on Twitter"><i class="icofont-twitter"></i></a>
+                  <a href="https://www.facebook.com/sharer/sharer.php?u={{full_url}}" title="Share on Facebook"><i class="icofont-facebook"></i></a>
+
                 </div>
 
               </div>

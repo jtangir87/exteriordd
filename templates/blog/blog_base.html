@@ -12,7 +12,8 @@
           <h2>Blog</h2>
           <ol>
             <li><a href="{% url 'home' %}">Home</a></li>
-            <li>Blog</li>
+            {% block breadcrumb %}
+            {% endblock breadcrumb %}
           </ol>
         </div>
 
@@ -49,7 +50,7 @@
               <div class="sidebar-item categories">
                 <ul>
                 {% for cat in categories %}
-                  <li><a href="#">{{cat.name}} <span>({{cat.post_count}})</span></a></li>
+                  <li><a href="{% url 'blog:filtered_blog_list' slug=cat.slug %}">{{cat.name}} <span>({{cat.post_count}})</span></a></li>
                 {% endfor %}
                 </ul>
 

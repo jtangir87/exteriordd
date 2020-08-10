@@ -13,11 +13,10 @@
 </style>
 {% endblock headscript %}
 
-
 {% block breadcrumb %}
-    <li>Blog</li>
+    <li><a href="{% url 'blog:blog_list' %}">Blog</a></li>
+    <li>{{category.name}}</li>
 {% endblock breadcrumb %}
-            
 
 {% block blog_content %}
         {% for blog in blogs %}
