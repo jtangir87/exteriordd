@@ -25,6 +25,7 @@ from .views import (
     financing_request,
     ResidentialLandingPage,
     contact_us_form,
+    AboutUsView,
 )
 
 urlpatterns = [
@@ -33,11 +34,7 @@ urlpatterns = [
     path("contact-us-form", contact_us_form, name="contact_us_form"),
     path("free-estimate", estimate_request, name="estimate_request"),
     path("financing", financing_request, name="financing_request"),
-    path(
-        "about-us",
-        TemplateView.as_view(template_name="pages/about.html"),
-        name="about_us",
-    ),
+    path("about-us", AboutUsView.as_view(), name="about_us",),
     path(
         "residential-services", ResidentialServicesView.as_view(), name="residential",
     ),

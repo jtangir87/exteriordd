@@ -57,6 +57,15 @@ class CommercialServicesView(TemplateView):
         return context
 
 
+class AboutUsView(TemplateView):
+    template_name = "pages/about.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["projects"] = Project.objects.all()[:8]
+        return context
+
+
 class ContactUsView(TemplateView):
     template_name = "pages/contact_us.html"
 
