@@ -204,7 +204,7 @@
         </div>
 
         <div class="row no-gutters clients-wrap clearfix" data-aos="fade-up">
-          {% for project in projects %}
+          {% for project in res_projects %}
           <div class="col-lg-3 col-md-4 col-6">
             <div class="client-logo">
             <a href="{% url 'portfolio:project_detail' pk=project.pk %}">
@@ -213,7 +213,15 @@
             </div>
           </div>
           {% endfor %}
-
+          {% for project in comm_projects %}
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+            <a href="{% url 'portfolio:project_detail' pk=project.pk %}">
+              <img src="{{project.default_img.url}}" class="img-fluid" alt="">
+            </a>
+            </div>
+          </div>
+          {% endfor %}
         </div>
 
       </div>

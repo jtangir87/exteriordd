@@ -62,7 +62,12 @@ class AboutUsView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["projects"] = Project.objects.all()[:8]
+        context["comm_projects"] = Project.objects.filter(category__name="Commercial")[
+            :4
+        ]
+        context["res_projects"] = Project.objects.filter(category__name="Residential")[
+            :4
+        ]
         return context
 
 
