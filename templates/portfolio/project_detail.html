@@ -50,9 +50,9 @@
         <div class="portfolio-details-container">
 
           <div class="owl-carousel portfolio-details-carousel">
-            <img src="{{project.default_img.url}}" class="img-fluid" alt="">
+            <img src="{{project.default_img.url}}" class="img-fluid" alt="" style="max-height:525px;">
             {% for image in project.project_images.all  %}
-                <img src="{{image.image.url}}" class="img-fluid" alt="">
+                <img src="{{image.image.url}}" class="img-fluid" alt="" style="max-height:525px;">
             {% endfor %}
           </div>
 
