@@ -20,12 +20,12 @@ def project_uploads(instance, filename):
 
 class Project(models.Model):
     name = models.CharField(max_length=200)
-    date = models.CharField(max_length=200)
-    services = models.CharField(max_length=255)
+    date = models.CharField(max_length=200, blank=True, null=True)
+    services = models.CharField(max_length=255, blank=True, null=True)
     category = models.ForeignKey(
         PortfolioCategory, on_delete=models.SET_NULL, null=True, blank=False
     )
-    description = models.TextField()
+    description = models.TextField(blank=True, null=True)
     default_img = models.ImageField(upload_to=project_uploads)
     created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
