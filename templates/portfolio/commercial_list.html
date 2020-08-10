@@ -41,7 +41,7 @@
             <img src="{{project.default_img.url}}" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>{{project.name}}</h4>
-              <p>{{project.date}}<br>{{project.services}}</p>
+              <p>{{project.date|default_if_none:""}}<br>{{project.services|default_if_none:""}}</p>
               <a href="{{project.default_img.url}}" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
               <a href="{% url 'portfolio:project_detail' pk=project.pk %}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>

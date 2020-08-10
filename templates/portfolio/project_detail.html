@@ -61,7 +61,8 @@
             <ul>
               <li><strong>Category</strong>: {{project.category.name}}</li>
               <li><strong>Project</strong>: {{project.name}}</li>
-              <li><strong>Project date</strong>: {{project.date}}</li>
+              {% if project.date %}<li><strong>Project date</strong>: {{project.date}}</li>{% endif %}
+              {% if project.services %}<li><strong>Project date</strong>: {{project.services}}</li>{% endif %}
             </ul>
           </div>
 
@@ -70,7 +71,7 @@
         <div class="portfolio-description">
           <h2>{{project.name}}</h2>
           <p>
-            {{project.description}}
+            {{project.description|default_if_none:""}}
           </p>
         </div>
 
