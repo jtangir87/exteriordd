@@ -11,7 +11,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="http://www.exteriordd.com/blog/{{blog.slug}}" />
   <meta property="og:image" content="{{blog.header_img.url}}" />
-  <meta property="og:description" content="Residential and commercial roofing and siding experts servicing Southeastern Pennsylvania and New Jersey for over 20 years" />
+  <meta property="og:description" content="{{blog.post|safe|truncatechars:"200"}}" />
   <meta property="og:site_name" content="Exterior Design & Development" />
 
 {% endblock meta_tags %}
@@ -31,7 +31,7 @@
               </div>
 
               <h2 class="entry-title">
-                <a href="blog-single.html">{{blog.title}}</a>
+                <a href="{% url 'blog:blog_detail' slug=blog.slug %}">{{blog.title}}</a>
               </h2>
 
               <div class="entry-meta">
@@ -50,7 +50,7 @@
                   <i class="icofont-folder"></i>
                   <ul class="cats">
                     {% for cat in blog.categories.all %}
-                        <li><a href="#">{{cat.name}}</a></li>
+                        <li><a href="#">{{cat.name}}</a> | </li>
                     {% endfor %}
                   </ul>
 
