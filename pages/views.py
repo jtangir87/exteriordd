@@ -105,7 +105,7 @@ def estimate_request(request):
                 "NEW ESTIMATE REQUEST",
                 content,
                 "{}<{}>".format(name, email),
-                ["chad@exteriordd.com"],
+                ["chad@exteriordd.com", "darren@exteriordd.com"],
                 fail_silently=False,
             )
 
@@ -147,7 +147,7 @@ def financing_request(request):
                 "NEW FINANCING REQUEST",
                 content,
                 "{}<{}>".format(name, email),
-                ["chad@exteriordd.com"],
+                ["chad@exteriordd.com", "darren@exteriordd.com"],
                 fail_silently=False,
             )
 
@@ -184,7 +184,7 @@ def contact_us_form(request):
                 "NEW CONTACT REQUEST",
                 content,
                 "{}<{}>".format(name, email),
-                ["chad@exteriordd.com"],
+                ["chad@exteriordd.com", "darren@exteriordd.com"],
                 fail_silently=False,
             )
 
