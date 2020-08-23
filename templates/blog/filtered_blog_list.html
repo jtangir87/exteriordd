@@ -39,7 +39,7 @@
 
               <div class="entry-content">
                 <p>
-                  {{blog.post|safe|truncatechars:"200"}}
+                  {{blog.post|striptags|truncatechars:"200"}}
                 </p>
                 <div class="read-more">
                   <a href="{% url 'blog:blog_detail' slug=blog.slug %}">Read More</a>
