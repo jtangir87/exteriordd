@@ -61,11 +61,12 @@
 
 
             <li {% if request.resolver_match.view_name == 'about_us' %}class="active"{% else %}{% endif %}><a href="{% url 'about_us' %}">About Us</a></li>
+            <li><a href="{% url 'home' %}#testimonials">Testimonials</a></li>
             <li {% if request.resolver_match.view_name == 'residential' %}class="active"{% else %}{% endif %}><a href="{% url 'residential' %}">Residential</a></li>
             <li {% if request.resolver_match.view_name == 'commercial' %}class="active"{% else %}{% endif %}><a href="{% url 'commercial' %}">Commercial</a></li>
             <li {% if '/portfolio' in request.path %}class="active drop-down"{% else %}{% endif %} class="drop-down"><a href="">Portfolio</a>
                 <ul>
-                <li><a href="{% url 'portfolio:residential_projects' %}">Residential</a></li>
+                <li><a href="{% url 'portfolio:residential_projects' %}" class="scrollto">Residential</a></li>
                 <li><a href="{% url 'portfolio:commercial_projects' %}">Commercial</a></li>
                 </ul>
             </li>
