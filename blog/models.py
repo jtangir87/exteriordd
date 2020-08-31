@@ -1,5 +1,7 @@
 import os
 from django.db import models
+from django.shortcuts import reverse
+
 from autoslug import AutoSlugField
 from tinymce.models import HTMLField
 
@@ -41,3 +43,5 @@ class BlogPost(models.Model):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return reverse("blog:blog_detail", kwargs={"slug": self.slug})
