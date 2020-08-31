@@ -45,6 +45,7 @@
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
   {% block headscript %}
   {% endblock headscript %}
+  {{estimate_form.media}}
 </head>
 
 <body>
@@ -182,12 +183,6 @@
   <script src="{% static 'js/main.js' %}"></script>
   <script src="{% static 'js/custom.js' %}"></script>
 
-  <script>
-  $('#modal-base').on('hidden.bs.modal', function(e) {
-    document.getElementById("estimateForm").reset();
-    $('#modal-base').modal('hide');
-  }); 
-  </script>
   {% block footscript %}
   {% endblock footscript %}
 </body>

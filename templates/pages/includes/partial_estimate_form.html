@@ -1,5 +1,4 @@
 {% load bootstrap4 %}
-{% bootstrap_javascript jquery='full' %}
 {{estimate_form.media}}
 <form method="POST" action="{% url 'estimate_request' %}" class="js-estimate-request-form" id="estimateForm">
   {% csrf_token %}
