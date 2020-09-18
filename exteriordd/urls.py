@@ -25,7 +25,7 @@ sitemaps = {"static": StaticViewSitemap, "blog_posts": BlogPostSitemap}
 
 urlpatterns = [
     path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="sitemap"),
-    path("dev/backend/", admin.site.urls),
+    path("cms", admin.site.urls),
     path("", include("pages.urls")),
     path("portfolio/", include("portfolio.urls")),
     path("blog/", include("blog.urls")),

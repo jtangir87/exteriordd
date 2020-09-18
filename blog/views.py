@@ -32,6 +32,30 @@ def blog_list(request):
     return render(request, "blog/blog_list.html", context)
 
 
+def blog_list_pending(request):
+    blog_list = BlogPost.objects.filter(published=False)
+    page = request.GET.get("page", 1)
+    sidebar_blogs = BlogPost.objects.filter(published=True)[:5]
+    categories = BlogCategory.objects.all()
+
+    paginator = Paginator(blog_list, 10)
+
+    try:
+        blogs = paginator.page(page)
+    except PageNotAnInteger:
+        blogs = paginator.page(1)
+    except EmptyPage:
+        blogs = paginator.page(paginator.num_pages)
+
+    context = {
+        "blogs": blogs,
+        "sidebar_blogs": sidebar_blogs,
+        "categories": categories,
+    }
+
+    return render(request, "blog/blog_list_pending.html", context)
+
+
 class BlogList(ListView):
     model = BlogPost
     template_name = "blog/blog_list.html"
