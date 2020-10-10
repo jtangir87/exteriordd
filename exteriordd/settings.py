@@ -137,8 +137,8 @@ EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent-emails")
 
 
 TINYMCE_DEFAULT_CONFIG = {
-    "plugins": "table,spellchecker,paste,searchreplace,code,preview,image,lists,media,link",
-    "toolbar": "numlist bullist image hr forecolor backcolor link",
+    "plugins": "table,spellchecker,paste,searchreplace,code,preview,image,lists,media,link, wordcount",
+    "toolbar": "numlist bullist image hr forecolor backcolor link wordcount",
 }
 
 try:
