@@ -106,6 +106,7 @@
                         {% bootstrap_field estimate_form.name show_label=False %}
                         {% bootstrap_field estimate_form.email show_label=False %}
                         {% bootstrap_field estimate_form.phone show_label=False %}
+                        {% bootstrap_field contact_form.address_hp %}
                     <div class="text-center"><button type="submit">Schedule Estimate</button></div>
                   </form>      
               </div>        
@@ -427,6 +428,7 @@
                           {% bootstrap_field estimate_form.name form_group_class="col-md-4 form-group" show_label=False %}
                           {% bootstrap_field estimate_form.email form_group_class="col-md-4 form-group" show_label=False %}
                           {% bootstrap_field estimate_form.phone form_group_class="col-md-4 form-group" show_label=False %}
+                          {% bootstrap_field contact_form.address_hp %}
                       </div>   
                       <button class="cta-btn align-middle" type="submit">Schedule</button>       
             </div>
@@ -510,6 +512,7 @@
 
                     {% bootstrap_field contact_form.email form_group_class="col-md-6 form-group" show_label=False %}
                     {% bootstrap_field contact_form.phone form_group_class="col-md-6 form-group" show_label=False %}
+                    {% bootstrap_field contact_form.address_hp %}
                 </div>
                 <div class="form-group">
                   <textarea class="form-control" name="message" id="id_message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>

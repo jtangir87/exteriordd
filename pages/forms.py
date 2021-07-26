@@ -14,6 +14,8 @@ class EstimateForm(forms.Form):
     message = forms.CharField(
         widget=forms.Textarea(attrs={"placeholder": "How can we help?"}), required=False
     )
+    address_hp = forms.CharField(
+        max_length=50, required=False, widget=forms.HiddenInput())
 
 
 class ContactUsForm(forms.Form):
@@ -23,16 +25,21 @@ class ContactUsForm(forms.Form):
     message = forms.CharField(
         widget=forms.Textarea(attrs={"placeholder": "How can we help?"})
     )
+    address_hp = forms.CharField(
+        max_length=50, required=False, widget=forms.HiddenInput())
 
 
 class FinancingForm(forms.Form):
     name = forms.CharField(max_length=100)
     email = forms.EmailField()
     phone = forms.CharField(max_length=15)
+    address_hp = forms.CharField(
+        max_length=50, required=False, widget=forms.HiddenInput())
 
 
 class LandingEstimateForm(forms.Form):
     name = forms.CharField(max_length=100)
     email = forms.EmailField()
     phone = forms.CharField(max_length=15)
-
+    address_hp = forms.CharField(
+        max_length=50, required=False, widget=forms.HiddenInput())

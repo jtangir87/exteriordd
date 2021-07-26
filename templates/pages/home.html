@@ -244,16 +244,13 @@
                           {% bootstrap_field estimate_form.city form_group_class="col-md-4 form-group" show_label=False %} 
                           {% bootstrap_field estimate_form.state form_group_class="col-md-4 form-group" show_label=False %} 
                       </div>
+                        {% bootstrap_field estimate_form.address_hp show_label=False %}
+
                       <div class="form-group">
                         <textarea class="form-control" name="message" id="id_message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="How can we help you?"></textarea>
-                        <div class="validate"></div>
                       </div>
                       <div class="text-center">
-                        <button class="btn btn-primary g-recaptcha"
-                        data-sitekey="6LdqwxUaAAAAACQ2hZJ54JuCOWOBAvxZuRHTd-mw" 
-                        data-callback='onSubmit' 
-                        data-action='submit'
-                        type='submit'>Schedule Estimate</button>                        
+                        <button class="btn btn-primary" type='submit'>Schedule Estimate</button>                        
                     </form>
                   </div>
         
